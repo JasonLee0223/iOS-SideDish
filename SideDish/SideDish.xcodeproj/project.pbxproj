@@ -56,9 +56,8 @@
 		5B10170029F38F3F00AE55F3 /* SideDish */ = {
 			isa = PBXGroup;
 			children = (
-				5B10170529F38F3F00AE55F3 /* HomeViewController.swift */,
+				5B10171829F392C300AE55F3 /* Presentation */,
 				5B10171529F38F8E00AE55F3 /* AppEnvironment */,
-				5B10171629F38FAD00AE55F3 /* View */,
 				5B10171729F38FC700AE55F3 /* Configuration */,
 			);
 			path = SideDish;
@@ -89,6 +88,23 @@
 				5B10170F29F38F4000AE55F3 /* Info.plist */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		5B10171829F392C300AE55F3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5B10170529F38F3F00AE55F3 /* HomeViewController.swift */,
+				5B10171929F392EB00AE55F3 /* Cells */,
+				5B10171629F38FAD00AE55F3 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5B10171929F392EB00AE55F3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
