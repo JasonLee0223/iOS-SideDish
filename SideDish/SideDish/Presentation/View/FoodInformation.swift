@@ -75,6 +75,7 @@ final class FoodInformation: UIStackView {
     }()
     
 }
+
 //MARK: - Configure Of Layout
 extension FoodInformation {
     private func configureFoodInformationStackView() {
