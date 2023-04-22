@@ -143,4 +143,24 @@ extension FoodInformation {
         label.textColor = .systemGray2
         label.attributedText = attributeString
     }
+    
+    private func setBadge(by bargainPriceTypes: [String]?) {
+        guard let bargainPriceTypes = bargainPriceTypes else { return }
+        
+        bargainPriceTypes.forEach { priceType in
+            switch BargainPriceTypeList(rawValue: priceType) {
+            case .best:
+                let badge = UILabel.makeBadge(title: priceType, backgroundColor: UIColor.launchingBadgeBackground)
+                badgeStackView.addArrangedSubview(badge)
+            case .new:
+                let badge = UILabel.makeBadge(title: priceType, backgroundColor: UIColor.eventBadgeBackground)
+                badgeStackView.addArrangedSubview(badge)
+            case .season:
+                let badge = UILabel.makeBadge(title: priceType, backgroundColor: UIColor.defaultBadgeBackground)
+                badgeStackView.addArrangedSubview(badge)
+            case .none:
+                return
+            }
+        }
+    }
 }
