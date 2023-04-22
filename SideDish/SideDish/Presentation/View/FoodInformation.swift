@@ -30,7 +30,7 @@ final class FoodInformation: UIStackView {
         return foodInformationStackView
     }()
     
-    private var foodPriceStackView: UIStackView = {
+    private(set) var foodPriceStackView: UIStackView = {
         let foodPriceStackView = UIStackView()
         foodPriceStackView.axis = .horizontal
         foodPriceStackView.spacing = 4
@@ -38,7 +38,7 @@ final class FoodInformation: UIStackView {
         return foodPriceStackView
     }()
     
-    private var badgeStackView: UIStackView = {
+    private(set) var badgeStackView: UIStackView = {
         let badgeStackView = UIStackView()
         badgeStackView.axis = .horizontal
         badgeStackView.spacing = 4
