@@ -16,6 +16,7 @@
 		5B10171D29F39B9500AE55F3 /* FoodInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10171C29F39B9500AE55F3 /* FoodInformation.swift */; };
 		5B10171F29F3B3D300AE55F3 /* BargainPriceTypeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10171E29F3B3D300AE55F3 /* BargainPriceTypeList.swift */; };
 		5B10172229F3B57E00AE55F3 /* extension + UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10172129F3B57E00AE55F3 /* extension + UILabel.swift */; };
+		5B10172429F3B85B00AE55F3 /* extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10172329F3B85B00AE55F3 /* extension + UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5B10171C29F39B9500AE55F3 /* FoodInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInformation.swift; sourceTree = "<group>"; };
 		5B10171E29F3B3D300AE55F3 /* BargainPriceTypeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BargainPriceTypeList.swift; sourceTree = "<group>"; };
 		5B10172129F3B57E00AE55F3 /* extension + UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension + UILabel.swift"; sourceTree = "<group>"; };
+		5B10172329F3B85B00AE55F3 /* extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension + UIColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				5B10172129F3B57E00AE55F3 /* extension + UILabel.swift */,
+				5B10172329F3B85B00AE55F3 /* extension + UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				5B10170629F38F3F00AE55F3 /* HomeViewController.swift in Sources */,
 				5B10170229F38F3F00AE55F3 /* AppDelegate.swift in Sources */,
 				5B10172229F3B57E00AE55F3 /* extension + UILabel.swift in Sources */,
+				5B10172429F3B85B00AE55F3 /* extension + UIColor.swift in Sources */,
 				5B10171F29F3B3D300AE55F3 /* BargainPriceTypeList.swift in Sources */,
 				5B10171D29F39B9500AE55F3 /* FoodInformation.swift in Sources */,
 				5B10170429F38F3F00AE55F3 /* SceneDelegate.swift in Sources */,
