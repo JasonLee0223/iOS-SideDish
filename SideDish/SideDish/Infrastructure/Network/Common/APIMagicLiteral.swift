@@ -12,5 +12,5 @@ enum APIMagicLiteral {
     static let main: String = "main"
     static let soup: String = "soup"
     static let side: String = "side"
-    static let detail: String = "detail"
+    static let detail: String = "detail/"
 }
