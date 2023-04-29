@@ -18,6 +18,7 @@
 		5B0697B129FCF3BE00AE8F90 /* DetailFoodInformationResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0697B029FCF3BE00AE8F90 /* DetailFoodInformationResponseDTO.swift */; };
 		5B0697B629FCF9CD00AE8F90 /* FoodInformationRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0697B529FCF9CD00AE8F90 /* FoodInformationRequestDTO.swift */; };
 		5B0697B829FCFB9200AE8F90 /* APIMagicLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0697B729FCFB9200AE8F90 /* APIMagicLiteral.swift */; };
+		5B0697BC29FD015600AE8F90 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0697BB29FD015600AE8F90 /* NetworkService.swift */; };
 		5B10170229F38F3F00AE55F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10170129F38F3F00AE55F3 /* AppDelegate.swift */; };
 		5B10170429F38F3F00AE55F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10170329F38F3F00AE55F3 /* SceneDelegate.swift */; };
 		5B10170629F38F3F00AE55F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10170529F38F3F00AE55F3 /* HomeViewController.swift */; };
@@ -44,6 +45,7 @@
 		5B0697B029FCF3BE00AE8F90 /* DetailFoodInformationResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodInformationResponseDTO.swift; sourceTree = "<group>"; };
 		5B0697B529FCF9CD00AE8F90 /* FoodInformationRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInformationRequestDTO.swift; sourceTree = "<group>"; };
 		5B0697B729FCFB9200AE8F90 /* APIMagicLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMagicLiteral.swift; sourceTree = "<group>"; };
+		5B0697BB29FD015600AE8F90 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5B1016FE29F38F3F00AE55F3 /* SideDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B10170129F38F3F00AE55F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B10170329F38F3F00AE55F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,9 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				5B0697A129FCE5A000AE8F90 /* Common */,
-				5B06979B29FCE36600AE8F90 /* Respondable.swift */,
-				5B06979D29FCE41F00AE8F90 /* Requestable.swift */,
-				5B06979F29FCE4DA00AE8F90 /* Endpoint.swift */,
+				5B0697B929FD012200AE8F90 /* Endpoint */,
+				5B0697BA29FD013C00AE8F90 /* Service */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -158,6 +159,24 @@
 				5B0697B529FCF9CD00AE8F90 /* FoodInformationRequestDTO.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		5B0697B929FD012200AE8F90 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				5B06979B29FCE36600AE8F90 /* Respondable.swift */,
+				5B06979D29FCE41F00AE8F90 /* Requestable.swift */,
+				5B06979F29FCE4DA00AE8F90 /* Endpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		5B0697BA29FD013C00AE8F90 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5B0697BB29FD015600AE8F90 /* NetworkService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		5B1016F529F38F3E00AE55F3 = {
@@ -330,6 +349,7 @@
 				5B10172429F3B85B00AE55F3 /* extension + UIColor.swift in Sources */,
 				5B0697AA29FCF13700AE8F90 /* FoodInformationDTO.swift in Sources */,
 				5B0697A629FCEFDF00AE8F90 /* APIEndpoint.swift in Sources */,
+				5B0697BC29FD015600AE8F90 /* NetworkService.swift in Sources */,
 				5B10171F29F3B3D300AE55F3 /* BargainPriceTypeList.swift in Sources */,
 				5B10171D29F39B9500AE55F3 /* FoodInformation.swift in Sources */,
 				5B06979E29FCE41F00AE8F90 /* Requestable.swift in Sources */,
