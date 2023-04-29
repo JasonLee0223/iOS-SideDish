@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B06979C29FCE36600AE8F90 /* Respondable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06979B29FCE36600AE8F90 /* Respondable.swift */; };
 		5B10170229F38F3F00AE55F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10170129F38F3F00AE55F3 /* AppDelegate.swift */; };
 		5B10170429F38F3F00AE55F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10170329F38F3F00AE55F3 /* SceneDelegate.swift */; };
 		5B10170629F38F3F00AE55F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10170529F38F3F00AE55F3 /* HomeViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B06979B29FCE36600AE8F90 /* Respondable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respondable.swift; sourceTree = "<group>"; };
 		5B1016FE29F38F3F00AE55F3 /* SideDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B10170129F38F3F00AE55F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B10170329F38F3F00AE55F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B06979929FCDF5B00AE8F90 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				5B06979A29FCE35800AE8F90 /* Network */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		5B06979A29FCE35800AE8F90 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5B06979B29FCE36600AE8F90 /* Respondable.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		5B1016F529F38F3E00AE55F3 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				5B10171829F392C300AE55F3 /* Presentation */,
+				5B06979929FCDF5B00AE8F90 /* Infrastructure */,
 				5B10171529F38F8E00AE55F3 /* AppEnvironment */,
 				5B10171729F38FC700AE55F3 /* Configuration */,
 			);
@@ -205,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B10170629F38F3F00AE55F3 /* HomeViewController.swift in Sources */,
+				5B06979C29FCE36600AE8F90 /* Respondable.swift in Sources */,
 				5B10170229F38F3F00AE55F3 /* AppDelegate.swift in Sources */,
 				5B10172629F3CB6E00AE55F3 /* HomeViewCell.swift in Sources */,
 				5B10172829F3D12A00AE55F3 /* HomeHeaderView.swift in Sources */,
