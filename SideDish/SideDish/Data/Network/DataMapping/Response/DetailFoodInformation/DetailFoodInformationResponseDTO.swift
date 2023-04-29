@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DetailFoodInformationResponseDTO {
+struct DetailFoodInformationResponseDTO: Decodable {
     let hash: String
     let detailFoodInfromationDTO: DetailFoodInfromationDTO
     

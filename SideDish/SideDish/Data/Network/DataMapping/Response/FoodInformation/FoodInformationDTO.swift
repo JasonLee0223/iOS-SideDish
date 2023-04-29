@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FoodInformationDTO {
+struct FoodInformationDTO: Decodable {
     let detailHash: String
     let foodImage: String
     let alternative: String
@@ -31,7 +31,7 @@ struct FoodInformationDTO {
     }
 }
 
-enum DeliveryType {
+enum DeliveryType: Decodable {
     case 새벽배송
     case 전국택배
 }

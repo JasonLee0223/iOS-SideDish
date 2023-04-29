@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DetailFoodInfromationDTO {
+struct DetailFoodInfromationDTO: Decodable {
     let topImage: String
     let thumbImages: [String]
     let productDescription: String

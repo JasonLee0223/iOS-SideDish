@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FoodInformationResponseDTO {
+struct FoodInformationResponseDTO: Decodable {
     let statusCode: Int
     let FoodInformationDTO: [FoodInformationDTO]
     
