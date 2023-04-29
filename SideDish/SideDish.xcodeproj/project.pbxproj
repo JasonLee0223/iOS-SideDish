@@ -132,8 +132,8 @@
 		5B0697B229FCF3FE00AE8F90 /* DetailFoodInformation */ = {
 			isa = PBXGroup;
 			children = (
-				5B0697AE29FCF37200AE8F90 /* DetailFoodInfromationDTO.swift */,
 				5B0697B029FCF3BE00AE8F90 /* DetailFoodInformationResultDTO.swift */,
+				5B0697AE29FCF37200AE8F90 /* DetailFoodInfromationDTO.swift */,
 			);
 			path = DetailFoodInformation;
 			sourceTree = "<group>";
