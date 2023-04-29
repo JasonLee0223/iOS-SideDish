@@ -12,6 +12,8 @@
 		5B0697A029FCE4DA00AE8F90 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06979F29FCE4DA00AE8F90 /* Endpoint.swift */; };
 		5B0697A329FCE5AA00AE8F90 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0697A229FCE5AA00AE8F90 /* NetworkError.swift */; };
 		5B0697A629FCEFDF00AE8F90 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0697A529FCEFDF00AE8F90 /* APIEndpoint.swift */; };
+		5B0697AA29FCF13700AE8F90 /* FoodInformationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0697A929FCF13700AE8F90 /* FoodInformationDTO.swift */; };
+		5B0697AC29FCF19100AE8F90 /* FoodInformationResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0697AB29FCF19100AE8F90 /* FoodInformationResultDTO.swift */; };
 		5B10170229F38F3F00AE55F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10170129F38F3F00AE55F3 /* AppDelegate.swift */; };
 		5B10170429F38F3F00AE55F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10170329F38F3F00AE55F3 /* SceneDelegate.swift */; };
 		5B10170629F38F3F00AE55F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10170529F38F3F00AE55F3 /* HomeViewController.swift */; };
@@ -32,6 +34,8 @@
 		5B06979F29FCE4DA00AE8F90 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		5B0697A229FCE5AA00AE8F90 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		5B0697A529FCEFDF00AE8F90 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		5B0697A929FCF13700AE8F90 /* FoodInformationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInformationDTO.swift; sourceTree = "<group>"; };
+		5B0697AB29FCF19100AE8F90 /* FoodInformationResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInformationResultDTO.swift; sourceTree = "<group>"; };
 		5B1016FE29F38F3F00AE55F3 /* SideDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B10170129F38F3F00AE55F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B10170329F38F3F00AE55F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,9 +93,35 @@
 		5B0697A429FCEFC500AE8F90 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				5B0697A529FCEFDF00AE8F90 /* APIEndpoint.swift */,
+				5B0697A729FCF10400AE8F90 /* Network */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		5B0697A729FCF10400AE8F90 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5B0697A829FCF11700AE8F90 /* DataMapping */,
+				5B0697A529FCEFDF00AE8F90 /* APIEndpoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5B0697A829FCF11700AE8F90 /* DataMapping */ = {
+			isa = PBXGroup;
+			children = (
+				5B0697AD29FCF31200AE8F90 /* FoodInformation */,
+			);
+			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		5B0697AD29FCF31200AE8F90 /* FoodInformation */ = {
+			isa = PBXGroup;
+			children = (
+				5B0697AB29FCF19100AE8F90 /* FoodInformationResultDTO.swift */,
+				5B0697A929FCF13700AE8F90 /* FoodInformationDTO.swift */,
+			);
+			path = FoodInformation;
 			sourceTree = "<group>";
 		};
 		5B1016F529F38F3E00AE55F3 = {
@@ -254,10 +284,12 @@
 				5B10170629F38F3F00AE55F3 /* HomeViewController.swift in Sources */,
 				5B06979C29FCE36600AE8F90 /* Respondable.swift in Sources */,
 				5B10170229F38F3F00AE55F3 /* AppDelegate.swift in Sources */,
+				5B0697AC29FCF19100AE8F90 /* FoodInformationResultDTO.swift in Sources */,
 				5B10172629F3CB6E00AE55F3 /* HomeViewCell.swift in Sources */,
 				5B10172829F3D12A00AE55F3 /* HomeHeaderView.swift in Sources */,
 				5B10172229F3B57E00AE55F3 /* extension + UILabel.swift in Sources */,
 				5B10172429F3B85B00AE55F3 /* extension + UIColor.swift in Sources */,
+				5B0697AA29FCF13700AE8F90 /* FoodInformationDTO.swift in Sources */,
 				5B0697A629FCEFDF00AE8F90 /* APIEndpoint.swift in Sources */,
 				5B10171F29F3B3D300AE55F3 /* BargainPriceTypeList.swift in Sources */,
 				5B10171D29F39B9500AE55F3 /* FoodInformation.swift in Sources */,
