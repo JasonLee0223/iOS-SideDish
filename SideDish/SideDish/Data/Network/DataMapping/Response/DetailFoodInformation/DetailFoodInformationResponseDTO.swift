@@ -9,10 +9,10 @@ import Foundation
 
 struct DetailFoodInformationResponseDTO: Decodable {
     let hash: String
-    let detailFoodInfromationDTO: DetailFoodInfromationDTO
+    let data: DetailFoodInfromationDTO
     
     enum CodingKeys: String, CodingKey {
         case hash
-        case detailFoodInfromationDTO = "data"
+        case data = "data"
     }
 }
