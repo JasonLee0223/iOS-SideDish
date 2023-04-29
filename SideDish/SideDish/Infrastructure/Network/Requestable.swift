@@ -10,7 +10,7 @@ import Foundation
 protocol Requestable {
     var baseURL: String { get }
     var path: String { get }
-    var subPath: String? { get }
+    var subPath: String { get }
     var method: HTTPMethod { get }
 }
 
@@ -27,9 +27,15 @@ extension Requestable {
     
     func url() throws -> URL {
         
-        let fullPath = "\(baseURL)\(path)"
+        var fullPath = ""
         
-        guard var urlComponents = URLComponents(string: fullPath) else {
+        if subPath.isEmpty {
+            fullPath = "\(baseURL)\(path)"
+        } else {
+            fullPath = "\(baseURL)\(path)\(subPath)"
+        }
+        
+        guard let urlComponents = URLComponents(string: fullPath) else {
             throw NetworkError.invalidComponents
         }
         
