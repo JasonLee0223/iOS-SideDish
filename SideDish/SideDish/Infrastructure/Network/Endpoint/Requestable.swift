@@ -29,7 +29,7 @@ extension Requestable {
         
         var fullPath = ""
         
-        if ((subPath?.isEmpty) != nil) {
+        if subPath == nil {
             fullPath = "\(baseURL)\(path)"
         } else {
             fullPath = "\(baseURL)\(path)\(subPath ?? "HBDEF")"
