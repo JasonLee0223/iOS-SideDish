@@ -14,12 +14,12 @@ class Endpoint<R>: RequestAndRespondable {
     
     var baseURL: String
     var path: String
-    var subPath: String
+    var subPath: String?
     var method: HTTPMethod
     
     init(baseURL: String,
          path: String,
-         subPath: String,
+         subPath: String? = nil,
          method: HTTPMethod = .get) {
         self.baseURL = baseURL
         self.path = path
