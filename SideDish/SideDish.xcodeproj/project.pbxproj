@@ -32,6 +32,7 @@
 		5B10172429F3B85B00AE55F3 /* extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10172329F3B85B00AE55F3 /* extension + UIColor.swift */; };
 		5B10172629F3CB6E00AE55F3 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10172529F3CB6E00AE55F3 /* HomeViewCell.swift */; };
 		5B10172829F3D12A00AE55F3 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10172729F3D12A00AE55F3 /* HomeHeaderView.swift */; };
+		5B5486BF29FE131E004DACAF /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5486BE29FE131E004DACAF /* Food.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		5B10172329F3B85B00AE55F3 /* extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension + UIColor.swift"; sourceTree = "<group>"; };
 		5B10172529F3CB6E00AE55F3 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		5B10172729F3D12A00AE55F3 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		5B5486BE29FE131E004DACAF /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				5B10171829F392C300AE55F3 /* Presentation */,
+				5B5486BC29FE126B004DACAF /* Domain */,
 				5B0697A429FCEFC500AE8F90 /* Data */,
 				5B06979929FCDF5B00AE8F90 /* Infrastructure */,
 				5B10171529F38F8E00AE55F3 /* AppEnvironment */,
@@ -266,6 +269,22 @@
 				5B10172329F3B85B00AE55F3 /* extension + UIColor.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5B5486BC29FE126B004DACAF /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5B5486BD29FE1284004DACAF /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5B5486BD29FE1284004DACAF /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				5B5486BE29FE131E004DACAF /* Food.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +377,7 @@
 				5B10171D29F39B9500AE55F3 /* FoodInformation.swift in Sources */,
 				5B06979E29FCE41F00AE8F90 /* Requestable.swift in Sources */,
 				5B0697B829FCFB9200AE8F90 /* APIMagicLiteral.swift in Sources */,
+				5B5486BF29FE131E004DACAF /* Food.swift in Sources */,
 				5B0697A329FCE5AA00AE8F90 /* NetworkError.swift in Sources */,
 				5B0697A029FCE4DA00AE8F90 /* Endpoint.swift in Sources */,
 				5B10170429F38F3F00AE55F3 /* SceneDelegate.swift in Sources */,
