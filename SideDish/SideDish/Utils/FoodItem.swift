@@ -16,12 +16,12 @@ protocol FoodItem {
     var saleCost: Cost { get }
 }
 
-enum Information: String {
-    case foodName
-    case foodDescription
+struct Information: Hashable {
+    let foodName: String
+    let foodDescription: String
 }
 
-enum Cost: String {
-    case primeCost
-    case saleCost
+struct Cost: Hashable {
+    let primeCost: String
+    let saleCost: String
 }
