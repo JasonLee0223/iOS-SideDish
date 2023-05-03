@@ -11,7 +11,7 @@ final class HomeViewCell: UICollectionViewCell {
     
     //MARK: - Private Property
     
-    static let identifier = "HomeCell"
+    static let identifier = String(describing: HomeViewCell.self)
     
     //MARK: - Initializer
     override init(frame: CGRect) {
