@@ -17,6 +17,14 @@ class HomeViewController: UIViewController {
         Task {
             try await networkService.request(with: APIEndpoint.supplyFoodInformation(with: APIMagicLiteral.main))
         }
+    //MARK: - Private Property
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewLayout())
+        collectionView.showsVerticalScrollIndicator = true
+        collectionView.clipsToBounds = true
+        collectionView.backgroundColor = .yellow
+        return collectionView
+    }()
     }
 }
 
