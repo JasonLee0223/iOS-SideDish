@@ -9,6 +9,8 @@ import UIKit
 
 final class HomeHeaderView: UICollectionReusableView {
     
+    static let identifier = String(describing: HomeHeaderView.self)
+    
     //MARK: - Initializer
     
     override init(frame: CGRect) {
