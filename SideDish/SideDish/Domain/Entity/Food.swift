@@ -10,8 +10,6 @@ import UIKit
 
 struct Food: FoodItem, Hashable {
     var foodImage: UIImage
-    var foodName: Information
-    var foodDescription: Information
-    var primeCost: Cost
-    var saleCost: Cost
+    var foodInformation: Information
+    var cost: Cost
 }
