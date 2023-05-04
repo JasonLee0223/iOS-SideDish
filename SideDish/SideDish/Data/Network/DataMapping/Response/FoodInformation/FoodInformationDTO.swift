@@ -25,8 +25,8 @@ struct FoodInformationDTO: Decodable {
         case deliveryType = "delivery_type"
         case title
         case description
-        case normalPrice = "n_Price"
-        case salePrice = "s_Price"
+        case normalPrice = "n_price"
+        case salePrice = "s_price"
         case badge
     }
 }
