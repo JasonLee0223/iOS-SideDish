@@ -10,10 +10,8 @@ import UIKit
 
 protocol FoodItem {
     var foodImage: UIImage { get }
-    var foodName: Information { get }
-    var foodDescription: Information { get }
-    var primeCost: Cost { get }
-    var saleCost: Cost { get }
+    var foodInformation: Information { get }
+    var cost: Cost { get }
 }
 
 struct Information: Hashable {
