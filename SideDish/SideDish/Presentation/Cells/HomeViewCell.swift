@@ -66,19 +66,19 @@ extension HomeViewCell {
     private func configureOfCellLayout() {
         cellView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            cellView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            cellView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            cellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            cellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+            cellView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
+            cellView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor),
+            cellView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            cellView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -16)
         ])
     }
     
     private func configureStackViewLayout() {
         foodInformationStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            foodInformationStackView.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
-            foodInformationStackView.leadingAnchor.constraint(equalTo: foodImageView.leadingAnchor, constant: 8),
-            foodInformationStackView.trailingAnchor.constraint(equalTo: cellView.trailingAnchor)
+            foodInformationStackView.centerYAnchor.constraint(equalTo: cellView.safeAreaLayoutGuide.centerYAnchor),
+            foodInformationStackView.leadingAnchor.constraint(equalTo: foodImageView.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            foodInformationStackView.trailingAnchor.constraint(equalTo: cellView.safeAreaLayoutGuide.trailingAnchor)
         ])
     }
 }
