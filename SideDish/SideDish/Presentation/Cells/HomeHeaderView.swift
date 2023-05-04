@@ -27,13 +27,6 @@ final class HomeHeaderView: UICollectionReusableView {
     
     private let titleFontSize: CGFloat = 32.0
     
-    private lazy var sectionStackView: UIStackView = {
-        let sectionStackView = UIStackView()
-        sectionStackView.axis = .vertical
-        sectionStackView.distribution = .fillProportionally
-        return sectionStackView
-    }()
-    
     private lazy var sectionTitle: UILabel = {
         let sectionTitle = UILabel()
         sectionTitle.font = .systemFont(ofSize: titleFontSize, weight: .medium)
@@ -46,21 +39,14 @@ final class HomeHeaderView: UICollectionReusableView {
 //MARK: - Configure of Layout
 extension HomeHeaderView {
     private func configuration() {
-        addSubview(sectionStackView)
-        [sectionTitle].forEach { label in
-            sectionStackView.addArrangedSubview(label)
-        }
-        ConfigureOfStackViewLayout()
-    }
-    
-    private func ConfigureOfStackViewLayout() {
         let sectionInset: CGFloat = 16.0
-        sectionStackView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(sectionTitle)
+        sectionTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            sectionStackView.topAnchor.constraint(equalTo: topAnchor, constant: sectionInset),
-            sectionStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -sectionInset),
-            sectionStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: sectionInset),
-            sectionStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -sectionInset)
+            sectionTitle.topAnchor.constraint(equalTo: topAnchor, constant: sectionInset),
+            sectionTitle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -sectionInset),
+            sectionTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: sectionInset),
+            sectionTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -sectionInset)
         ])
     }
 }
