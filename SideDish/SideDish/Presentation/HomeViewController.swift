@@ -10,13 +10,13 @@ import UIKit
 class HomeViewController: UIViewController {
     
     let networkService = NetworkService()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureOfSuperViewLayout()
         
-        Task {
-            try await networkService.request(with: APIEndpoint.supplyFoodInformation(with: APIMagicLiteral.main))
-        }
+    }
+    
     //MARK: - Private Property
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewLayout())
@@ -25,12 +25,15 @@ class HomeViewController: UIViewController {
         collectionView.backgroundColor = .yellow
         return collectionView
     }()
+}
+        
 //MARK: - Configure Of Layout
 extension HomeViewController {
     private func configureOfSuperViewLayout() {
         let superViewSafeArea = self.view.safeAreaLayoutGuide
         self.view.addSubview(collectionView)
         
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: superViewSafeArea.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: superViewSafeArea.leadingAnchor),
