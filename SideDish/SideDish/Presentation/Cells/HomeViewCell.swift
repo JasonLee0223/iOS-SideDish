@@ -27,7 +27,7 @@ final class HomeViewCell: UICollectionViewCell {
     //MARK: - Private Property
     private lazy var cellView = UIView()
     
-    private lazy var foodInformationStackView = FoodInformation()
+    private(set) lazy var foodInformationStackView = FoodInformation()
     
     private lazy var foodImageView: UIImageView = {
         let foodImageView = UIImageView()
