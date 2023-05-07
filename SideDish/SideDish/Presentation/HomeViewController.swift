@@ -10,19 +10,29 @@ import UIKit
 class HomeViewController: UIViewController {
     
     let networkService = NetworkService()
+    let homeCollectionViewDataSource = HomeCollectionViewDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureOfSuperViewLayout()
         
     }
     
     //MARK: - Private Property
     private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewLayout())
+        let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: configureOfCollectionViewLayout())
         collectionView.showsVerticalScrollIndicator = true
         collectionView.clipsToBounds = true
-        collectionView.backgroundColor = .yellow
+        collectionView.backgroundColor = .systemOrange
+        collectionView.dataSource = homeCollectionViewDataSource
+        
+        collectionView.register(HomeHeaderView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: HomeHeaderView.identifier)
+        
+        collectionView.register(HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.identifier)
+        
         return collectionView
     }()
 }
@@ -58,4 +68,3 @@ extension HomeViewController {
         return layout
     }
 }
-
