@@ -16,6 +16,7 @@ final class HomeHeaderView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configuration()
+        self.backgroundColor = .systemBlue
     }
     
     required init?(coder: NSCoder) {

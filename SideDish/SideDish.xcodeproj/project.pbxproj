@@ -34,6 +34,7 @@
 		5B10172829F3D12A00AE55F3 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10172729F3D12A00AE55F3 /* HomeHeaderView.swift */; };
 		5B5486BF29FE131E004DACAF /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5486BE29FE131E004DACAF /* Food.swift */; };
 		5B5486C229FE1636004DACAF /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5486C129FE1636004DACAF /* FoodItem.swift */; };
+		5BAA13202A060B0300C7E64A /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		5B10172729F3D12A00AE55F3 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		5B5486BE29FE131E004DACAF /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		5B5486C129FE1636004DACAF /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				5B10170529F38F3F00AE55F3 /* HomeViewController.swift */,
+				5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */,
 				5B10171929F392EB00AE55F3 /* Cells */,
 				5B10171629F38FAD00AE55F3 /* View */,
 			);
@@ -389,6 +392,7 @@
 				5B10171D29F39B9500AE55F3 /* FoodInformation.swift in Sources */,
 				5B06979E29FCE41F00AE8F90 /* Requestable.swift in Sources */,
 				5B0697B829FCFB9200AE8F90 /* APIMagicLiteral.swift in Sources */,
+				5BAA13202A060B0300C7E64A /* HomeCollectionViewDataSource.swift in Sources */,
 				5B5486BF29FE131E004DACAF /* Food.swift in Sources */,
 				5B0697A329FCE5AA00AE8F90 /* NetworkError.swift in Sources */,
 				5B0697A029FCE4DA00AE8F90 /* Endpoint.swift in Sources */,

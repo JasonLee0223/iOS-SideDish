@@ -17,6 +17,7 @@ final class HomeViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configuration()
+        self.backgroundColor = .systemGray2
     }
     
     required init?(coder: NSCoder) {
@@ -27,7 +28,7 @@ final class HomeViewCell: UICollectionViewCell {
     //MARK: - Private Property
     private lazy var cellView = UIView()
     
-    private lazy var foodInformationStackView = FoodInformation()
+    private(set) lazy var foodInformationStackView = FoodInformation()
     
     private lazy var foodImageView: UIImageView = {
         let foodImageView = UIImageView()
