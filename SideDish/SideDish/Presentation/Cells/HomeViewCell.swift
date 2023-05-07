@@ -17,6 +17,7 @@ final class HomeViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configuration()
+        self.backgroundColor = .systemGray2
     }
     
     required init?(coder: NSCoder) {
