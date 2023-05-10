@@ -96,6 +96,9 @@ extension FoodInformation {
         foodInformationStackView.addArrangedSubview(foodTitle)
         foodInformationStackView.addArrangedSubview(foodDescription)
         foodInformationStackView.addArrangedSubview(foodPriceStackView)
+        
+        foodPriceStackView.addArrangedSubview(primeCostContent)
+        foodPriceStackView.addArrangedSubview(discountedCostContent)
         addArrangedSubview(badgeStackView)
         configureOfLayout()
     }
