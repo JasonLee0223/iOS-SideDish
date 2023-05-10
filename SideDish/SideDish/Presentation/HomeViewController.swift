@@ -21,10 +21,9 @@ class HomeViewController: UIViewController {
     
     //MARK: - Private Property
     private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: configureOfCollectionViewLayout())
+        let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: configreOfCollectionViewFlowLayout())
         collectionView.showsVerticalScrollIndicator = true
         collectionView.clipsToBounds = true
-        collectionView.backgroundColor = .systemOrange
         collectionView.dataSource = homeCollectionViewDataSource
         
         collectionView.register(HomeHeaderView.self,
@@ -52,7 +51,16 @@ extension HomeViewController {
         ])
     }
     
-    private func configureOfCollectionViewLayout() -> UICollectionViewLayout {
+    private func configreOfCollectionViewFlowLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewFlowLayout()
+        let headerSize = CGSize(width: self.view.frame.width, height: 130)
+        let itemSize = CGSize(width:self.view.frame.width, height: 130)
+        layout.headerReferenceSize = headerSize
+        layout.itemSize = itemSize
+        return layout
+    }
+    
+    private func configureOfCollectionViewCompositionalLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(343),
                                               heightDimension: .absolute(130))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
