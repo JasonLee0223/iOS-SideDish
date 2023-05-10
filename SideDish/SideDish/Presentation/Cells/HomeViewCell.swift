@@ -33,7 +33,7 @@ final class HomeViewCell: UICollectionViewCell {
     private lazy var foodImageView: UIImageView = {
         let foodImageView = UIImageView()
         foodImageView.contentMode = .scaleToFill
-        foodImageView.frame.size = CGSize(width: 130, height: 130)
+        foodImageView.frame.size = CGSize(width: self.frame.height, height: self.frame.height)
         foodImageView.layer.cornerRadius = 5
         foodImageView.clipsToBounds = true
         return foodImageView
@@ -78,7 +78,7 @@ extension HomeViewCell {
         foodInformationStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             foodInformationStackView.centerYAnchor.constraint(equalTo: cellView.safeAreaLayoutGuide.centerYAnchor),
-            foodInformationStackView.leadingAnchor.constraint(equalTo: foodImageView.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            foodInformationStackView.leadingAnchor.constraint(equalTo: foodImageView.safeAreaLayoutGuide.trailingAnchor, constant: 8),
             foodInformationStackView.trailingAnchor.constraint(equalTo: cellView.safeAreaLayoutGuide.trailingAnchor)
         ])
     }
