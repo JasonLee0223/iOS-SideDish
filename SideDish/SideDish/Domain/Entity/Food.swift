@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct Food: FoodItem, Hashable {
-    var foodImage: UIImage
+    var foodImage: UIImage?
     var foodInformation: Information
     var cost: Cost
 }
