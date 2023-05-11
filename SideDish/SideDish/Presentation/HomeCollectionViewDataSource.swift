@@ -19,6 +19,14 @@ enum Section: Int, CaseIterable {
         case .sideDish: return "식탁을 풍성하게 하는 정갈한 밑반찬"
         }
     }
+    
+    var offerMenuName: String {
+        switch self {
+        case .main: return APIMagicLiteral.main
+        case .soup: return APIMagicLiteral.soup
+        case .sideDish: return APIMagicLiteral.side
+        }
+    }
 }
 
 final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
