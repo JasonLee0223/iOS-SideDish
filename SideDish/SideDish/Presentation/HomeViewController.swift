@@ -15,18 +15,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureOfSuperView()
+        configureOfNavigationBar()
+        
         configureOfSuperViewLayout()
         fetchData()
     }
-    
-    private lazy var navigationBar : UINavigationBar = {
-        let navigationBar = UINavigationBar()
-        let navigationItem = UINavigationItem(title: "Ordering")
-        navigationBar.setItems([navigationItem], animated: true)
-        navigationBar.isTranslucent = false
-
-        return navigationBar
-    }()
     
     //MARK: - Private Property
     private lazy var collectionView: UICollectionView = {
@@ -44,27 +38,30 @@ class HomeViewController: UIViewController {
         return collectionView
     }()
 }
+
+//MARK: - Configure of UI Components
+extension HomeViewController {
+    private func configureOfSuperView() {
+        view.backgroundColor = .systemBackground
+    }
+    
+    private func configureOfNavigationBar() {
+        navigationItem.title = "Ordering"
+    }
+}
         
 //MARK: - Configure of Layout
 extension HomeViewController {
     private func configureOfSuperViewLayout() {
         let superViewSafeArea = self.view.safeAreaLayoutGuide
         
-        self.view.addSubview(navigationBar)
-        navigationBar.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            navigationBar.topAnchor.constraint(equalTo: superViewSafeArea.topAnchor),
-            navigationBar.leadingAnchor.constraint(equalTo: superViewSafeArea.leadingAnchor),
-            navigationBar.trailingAnchor.constraint(equalTo: superViewSafeArea.trailingAnchor)
-        ])
-        
         self.view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor),
+            collectionView.topAnchor.constraint(equalTo: superViewSafeArea.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: superViewSafeArea.bottomAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: navigationBar.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: navigationBar.trailingAnchor)
+            collectionView.leadingAnchor.constraint(equalTo: superViewSafeArea.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: superViewSafeArea.trailingAnchor)
         ])
     }
     
