@@ -7,9 +7,7 @@
 
 import UIKit
 
-final class HomeHeaderView: UICollectionReusableView {
-    
-    static let identifier = String(describing: HomeHeaderView.self)
+final class HomeHeaderView: UICollectionReusableView, Gettable {
     
     //MARK: - Initializer
     
