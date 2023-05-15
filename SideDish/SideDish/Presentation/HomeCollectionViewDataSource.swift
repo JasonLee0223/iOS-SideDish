@@ -75,8 +75,6 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        print(self.headers[indexPath.section])
-        
         switch self.headers[indexPath.section] {
         case .main:
             return configure(cell: cell, food: foods[Section.main]?[indexPath.row])
@@ -90,20 +88,19 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     private func configure(cell: HomeViewCell, food: Food?) -> HomeViewCell {
         guard let food = food else { return HomeViewCell() }
-//        setImage(cell: cell, by: food.foodImage)
-//        cell.foodInformationStackView.setTitle(by: food.foodInformation.foodName)
-//        cell.foodInformationStackView.setDescription(by: food.foodInformation.foodDescription)
-//        cell.foodInformationStackView.setPrimeCost(by: food.cost.primeCost)
-//        cell.foodInformationStackView.setDiscountedCost(by: food.cost.saleCost)
-//        cell.menuStackView.setBadges(by: food)
         
 //        setImage(cell: cell, by: food.foodImage)
-        cell.foodInformationStackView.setTitle(by: "food.foodInformation.foodName")
-        cell.foodInformationStackView.setDescription(by: "food.foodInformation.foodDescription")
-        cell.foodInformationStackView.setPrimeCost(by: "food.cost.primeCost")
-        cell.foodInformationStackView.setDiscountedCost(by: "food.cost.saleCost")
+        cell.setFoodImage(image: food.foodImage!)
+        cell.foodInformationStackView.setTitle(by: food.foodInformation.foodName)
+        cell.foodInformationStackView.setDescription(by: food.foodInformation.foodDescription)
+        cell.foodInformationStackView.setPrimeCost(by: food.cost.primeCost)
+        cell.foodInformationStackView.setDiscountedCost(by: food.cost.saleCost)
 //        cell.menuStackView.setBadges(by: food)
         return cell
+    }
+    
+    func fetch(foods: [Food], section: Section) {
+        self.foods[section] = foods
     }
     
     //TODO: - Image 다운로드 및 Configure
