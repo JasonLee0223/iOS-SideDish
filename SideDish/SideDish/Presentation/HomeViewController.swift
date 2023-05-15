@@ -117,16 +117,13 @@ extension HomeViewController {
                 
                 switch section {
                 case .main:
-                    print(foodDataStorage.count, section)
-                    self.homeCollectionViewDataSource.fetch(menus: foodDataStorage, section: section)
+                    self.homeCollectionViewDataSource.fetch(foods: foodDataStorage, section: section)
                     self.collectionView.reloadData()
                 case .soup:
-                    print(foodDataStorage.count, section)
-                    self.homeCollectionViewDataSource.fetch(menus: foodDataStorage, section: section)
+                    self.homeCollectionViewDataSource.fetch(foods: foodDataStorage, section: section)
                     self.collectionView.reloadData()
                 case .sideDish:
-                    print(foodDataStorage.count, section)
-                    self.homeCollectionViewDataSource.fetch(menus: foodDataStorage, section: section)
+                    self.homeCollectionViewDataSource.fetch(foods: foodDataStorage, section: section)
                     self.collectionView.reloadData()
                 }
             }
