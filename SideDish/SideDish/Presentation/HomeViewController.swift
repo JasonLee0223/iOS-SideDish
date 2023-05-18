@@ -15,8 +15,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureOfSuperView()
-        configureOfNavigationBar()
+        configureOfUIComponents()
         
         configureOfSuperViewLayout()
         fetchData()
@@ -41,6 +40,12 @@ class HomeViewController: UIViewController {
 
 //MARK: - Configure of UI Components
 extension HomeViewController {
+    
+    private func configureOfUIComponents() {
+        configureOfSuperView()
+        configureOfNavigationBar()
+    }
+    
     private func configureOfSuperView() {
         view.backgroundColor = .systemBackground
     }
