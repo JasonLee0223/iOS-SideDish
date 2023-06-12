@@ -33,7 +33,6 @@
 		5B10172629F3CB6E00AE55F3 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10172529F3CB6E00AE55F3 /* HomeViewCell.swift */; };
 		5B10172829F3D12A00AE55F3 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10172729F3D12A00AE55F3 /* HomeHeaderView.swift */; };
 		5B5486BF29FE131E004DACAF /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5486BE29FE131E004DACAF /* Food.swift */; };
-		5B5486C229FE1636004DACAF /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5486C129FE1636004DACAF /* FoodItem.swift */; };
 		5B6CD7542A37708E0066A672 /* HomeFoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD7532A37708E0066A672 /* HomeFoodItem.swift */; };
 		5B7806642A12491100809012 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7806632A12491100809012 /* Reusable.swift */; };
 		5BAA13202A060B0300C7E64A /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */; };
@@ -68,7 +67,6 @@
 		5B10172529F3CB6E00AE55F3 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		5B10172729F3D12A00AE55F3 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		5B5486BE29FE131E004DACAF /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
-		5B5486C129FE1636004DACAF /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		5B6CD7532A37708E0066A672 /* HomeFoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFoodItem.swift; sourceTree = "<group>"; };
 		5B7806632A12491100809012 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 				5B5486BC29FE126B004DACAF /* Domain */,
 				5B0697A429FCEFC500AE8F90 /* Data */,
 				5B06979929FCDF5B00AE8F90 /* Infrastructure */,
-				5B5486C029FE1610004DACAF /* Utils */,
 				5B10171529F38F8E00AE55F3 /* AppEnvironment */,
 				5B10171729F38FC700AE55F3 /* Configuration */,
 			);
@@ -297,14 +294,6 @@
 				5B5486BE29FE131E004DACAF /* Food.swift */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		5B5486C029FE1610004DACAF /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				5B5486C129FE1636004DACAF /* FoodItem.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		5B6CD7512A37703D0066A672 /* Interface */ = {
@@ -412,7 +401,6 @@
 				5B0697A629FCEFDF00AE8F90 /* APIEndpoint.swift in Sources */,
 				5B0697BC29FD015600AE8F90 /* NetworkService.swift in Sources */,
 				5B10171F29F3B3D300AE55F3 /* BargainPriceTypeList.swift in Sources */,
-				5B5486C229FE1636004DACAF /* FoodItem.swift in Sources */,
 				5B10171D29F39B9500AE55F3 /* FoodInformation.swift in Sources */,
 				5B06979E29FCE41F00AE8F90 /* Requestable.swift in Sources */,
 				5B0697B829FCFB9200AE8F90 /* APIMagicLiteral.swift in Sources */,
