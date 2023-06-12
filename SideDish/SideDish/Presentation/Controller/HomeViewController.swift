@@ -23,17 +23,21 @@ class HomeViewController: UIViewController {
     
     //MARK: - Private Property
     private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: configreOfCollectionViewFlowLayout())
+        let collectionView = UICollectionView(
+            frame: .zero, collectionViewLayout: configreOfCollectionViewFlowLayout()
+        )
         collectionView.showsVerticalScrollIndicator = true
         collectionView.clipsToBounds = true
         collectionView.dataSource = homeCollectionViewDataSource
         
-        collectionView.register(HomeHeaderView.self,
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: HomeHeaderView.identifier
+        collectionView.register(
+            HomeHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: HomeHeaderView.identifier
         )
         
-        collectionView.register(HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.identifier)
+        collectionView.register(
+            HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.identifier
+        )
         
         return collectionView
     }()
@@ -58,6 +62,7 @@ extension HomeViewController {
         
 //MARK: - Configure of Layout
 extension HomeViewController {
+    
     private func configureOfSuperViewLayout() {
         let superViewSafeArea = self.view.safeAreaLayoutGuide
         
@@ -107,6 +112,8 @@ extension HomeViewController {
                     
                     foodDataStorage.append(makeFoodItem)
                 }
+                
+                print(section)
                 
                 switch section {
                 case .main:
