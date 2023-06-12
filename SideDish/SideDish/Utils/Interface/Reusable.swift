@@ -1,5 +1,5 @@
 //
-//  Gettable.swift
+//  Reusable.swift
 //  SideDish
 //
 //  Created by Jason on 2023/05/15.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol Gettable {
+protocol Reusable {
     static var identifier: String { get }
 }
 
-extension Gettable {
+extension Reusable {
     static var identifier: String {
         return String(describing: self)
     }

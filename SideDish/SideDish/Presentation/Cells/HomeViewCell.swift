@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeViewCell: UICollectionViewCell, Gettable {
+final class HomeViewCell: UICollectionViewCell, Reusable {
     
     //MARK: - Initializer
     override init(frame: CGRect) {
