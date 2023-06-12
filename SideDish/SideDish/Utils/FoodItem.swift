@@ -6,13 +6,6 @@
 //
 
 import Foundation
-import UIKit
-
-protocol FoodItem {
-    var foodImage: UIImage? { get }
-    var foodInformation: Information { get }
-    var cost: Cost { get }
-}
 
 struct Information: Hashable {
     let foodName: String

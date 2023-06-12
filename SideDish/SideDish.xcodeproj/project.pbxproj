@@ -34,6 +34,7 @@
 		5B10172829F3D12A00AE55F3 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10172729F3D12A00AE55F3 /* HomeHeaderView.swift */; };
 		5B5486BF29FE131E004DACAF /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5486BE29FE131E004DACAF /* Food.swift */; };
 		5B5486C229FE1636004DACAF /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5486C129FE1636004DACAF /* FoodItem.swift */; };
+		5B6CD7542A37708E0066A672 /* HomeFoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD7532A37708E0066A672 /* HomeFoodItem.swift */; };
 		5B7806642A12491100809012 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7806632A12491100809012 /* Reusable.swift */; };
 		5BAA13202A060B0300C7E64A /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		5B10172729F3D12A00AE55F3 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		5B5486BE29FE131E004DACAF /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		5B5486C129FE1636004DACAF /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		5B6CD7532A37708E0066A672 /* HomeFoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFoodItem.swift; sourceTree = "<group>"; };
 		5B7806632A12491100809012 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,6 +266,7 @@
 		5B10171929F392EB00AE55F3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				5B6CD7512A37703D0066A672 /* Interface */,
 				5B10172729F3D12A00AE55F3 /* HomeHeaderView.swift */,
 				5B10172529F3CB6E00AE55F3 /* HomeViewCell.swift */,
 			);
@@ -290,6 +293,7 @@
 		5B5486BD29FE1284004DACAF /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				5B6CD7522A3770720066A672 /* Interface */,
 				5B5486BE29FE131E004DACAF /* Food.swift */,
 			);
 			path = Entity;
@@ -298,16 +302,23 @@
 		5B5486C029FE1610004DACAF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5B7806622A1248AF00809012 /* Interface */,
 				5B5486C129FE1636004DACAF /* FoodItem.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		5B7806622A1248AF00809012 /* Interface */ = {
+		5B6CD7512A37703D0066A672 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
 				5B7806632A12491100809012 /* Reusable.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		5B6CD7522A3770720066A672 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				5B6CD7532A37708E0066A672 /* HomeFoodItem.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -392,6 +403,7 @@
 				5B0697B629FCF9CD00AE8F90 /* FoodInformationRequestDTO.swift in Sources */,
 				5B10172629F3CB6E00AE55F3 /* HomeViewCell.swift in Sources */,
 				5B0697AF29FCF37200AE8F90 /* DetailFoodInfromationDTO.swift in Sources */,
+				5B6CD7542A37708E0066A672 /* HomeFoodItem.swift in Sources */,
 				5B10172829F3D12A00AE55F3 /* HomeHeaderView.swift in Sources */,
 				5B10172229F3B57E00AE55F3 /* extension + UILabel.swift in Sources */,
 				5B0697B129FCF3BE00AE8F90 /* DetailFoodInformationResponseDTO.swift in Sources */,
