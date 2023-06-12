@@ -254,8 +254,8 @@
 		5B10171829F392C300AE55F3 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				5B6CD7572A3771CB0066A672 /* CellLayout */,
 				5B6CD7552A3771450066A672 /* Controller */,
+				5B6CD7572A3771CB0066A672 /* CellLayout */,
 				5B6CD7562A37714E0066A672 /* DataSource */,
 				5B10171929F392EB00AE55F3 /* Cells */,
 				5B10171629F38FAD00AE55F3 /* View */,
