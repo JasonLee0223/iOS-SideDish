@@ -252,8 +252,8 @@
 		5B10171829F392C300AE55F3 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				5B10170529F38F3F00AE55F3 /* HomeViewController.swift */,
-				5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */,
+				5B6CD7552A3771450066A672 /* Controller */,
+				5B6CD7562A37714E0066A672 /* DataSource */,
 				5B10171929F392EB00AE55F3 /* Cells */,
 				5B10171629F38FAD00AE55F3 /* View */,
 			);
@@ -310,6 +310,22 @@
 				5B6CD7532A37708E0066A672 /* HomeFoodItem.swift */,
 			);
 			path = Interface;
+			sourceTree = "<group>";
+		};
+		5B6CD7552A3771450066A672 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5B10170529F38F3F00AE55F3 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B6CD7562A37714E0066A672 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
