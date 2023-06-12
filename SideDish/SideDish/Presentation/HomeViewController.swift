@@ -30,7 +30,8 @@ class HomeViewController: UIViewController {
         
         collectionView.register(HomeHeaderView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: HomeHeaderView.identifier)
+                                withReuseIdentifier: HomeHeaderView.identifier
+        )
         
         collectionView.register(HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.identifier)
         
@@ -104,17 +105,32 @@ extension HomeViewController {
         Section.allCases.forEach { section in
             
             Task {
-                let apiData = try await networkService.request(with: APIEndpoint.supplyFoodInformation(with: section.offerMenuName)).body
+                let networkResult = try await networkService.request(
+                    with: APIEndpoint.supplyFoodInformation(
+                        with: section.offerMenuName
+                    )
+                ).body
+                
                 var foodDataStorage = [Food]()
                 
-                apiData.forEach { foodInformationDTO in
+                for result in networkResult {
+                    guard let imageURL = URL(string: result.foodImage) else {
+                        return
+                    }
                     
-                    let foodData = Food(foodImage: UIImage(systemName: "star.fill"),
-                                        foodInformation: Information(foodName: foodInformationDTO.title,
-                                                                     foodDescription: foodInformationDTO.description),
-                                        cost: Cost(primeCost: foodInformationDTO.normalPrice ?? "",
-                                                   saleCost: foodInformationDTO.salePrice ?? ""))
-                    foodDataStorage.append(foodData)
+                    let imageData = try Data(contentsOf: imageURL)
+                    
+                    let makeFoodItem = Food(foodImage: UIImage(data: imageData),
+                         foodInformation: Information(
+                            foodName: result.title,
+                            foodDescription: result.description
+                         ), cost: Cost(
+                            primeCost: result.normalPrice ?? "",
+                            saleCost: result.salePrice ?? ""
+                         )
+                    )
+                    
+                    foodDataStorage.append(makeFoodItem)
                 }
                 
                 switch section {
@@ -124,7 +140,7 @@ extension HomeViewController {
                 case .soup:
                     self.homeCollectionViewDataSource.fetch(foods: foodDataStorage, section: section)
                     self.collectionView.reloadData()
-                case .sideDish:
+                case .side:
                     self.homeCollectionViewDataSource.fetch(foods: foodDataStorage, section: section)
                     self.collectionView.reloadData()
                 }
