@@ -23,6 +23,22 @@ final class HomeViewModel {
 //MARK: - Use of DataSource
 extension HomeViewModel {
     
+    func countOfSection() -> Int {
+        return sectionStorage.count
+    }
+    
+    func countItem(of sectionNumber: Int) async throws -> Int {
+        
+        let sectionType = Section.allCases[sectionNumber]
+        
+        guard let items = sectionStorage[sectionType]?.value else {
+//            throw print("\(#function) 잘못된 item 갯수")
+            throw NetworkError.emptyData
+        }
+        
+        return items.count
+    }
+    
     func fetchOfData() {
         
         Section.allCases.forEach { section in
