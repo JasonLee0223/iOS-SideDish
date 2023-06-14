@@ -10,6 +10,7 @@ import Foundation
 enum ErrorOfHomeViewModel: LocalizedError {
     case WrongCountToNumberOfItemsInSection
     case EmptyOfOpenAPIData
+    case FailOfMakeURL
     
     var errorDescription: String {
         switch self {
@@ -17,6 +18,8 @@ enum ErrorOfHomeViewModel: LocalizedError {
             return "❌ \(#function): Wrong Count To Number Of Items In Section"
         case .EmptyOfOpenAPIData:
             return "❌ \(#function): Empty of Open API Data"
+        case .FailOfMakeURL:
+            return "❌ \(#function): Fail of Make URL"
         }
     }
 }
