@@ -37,6 +37,7 @@
 		5B6CD75A2A3771E70066A672 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD7592A3771E70066A672 /* Section.swift */; };
 		5B6CD75D2A37752F0066A672 /* HomeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD75C2A37752F0066A672 /* HomeLayout.swift */; };
 		5B6CD7612A3777520066A672 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD7602A3777520066A672 /* Observable.swift */; };
+		5B6CD7632A3979FB0066A672 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD7622A3979FB0066A672 /* HomeViewModel.swift */; };
 		5B7806642A12491100809012 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7806632A12491100809012 /* Reusable.swift */; };
 		5BAA13202A060B0300C7E64A /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 		5B6CD7592A3771E70066A672 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		5B6CD75C2A37752F0066A672 /* HomeLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayout.swift; sourceTree = "<group>"; };
 		5B6CD7602A3777520066A672 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		5B6CD7622A3979FB0066A672 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5B7806632A12491100809012 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				5B6CD75F2A3777470066A672 /* Interface */,
+				5B6CD7622A3979FB0066A672 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				5B6CD75A2A3771E70066A672 /* Section.swift in Sources */,
 				5B6CD7542A37708E0066A672 /* HomeFoodItem.swift in Sources */,
 				5B10172829F3D12A00AE55F3 /* HomeHeaderView.swift in Sources */,
+				5B6CD7632A3979FB0066A672 /* HomeViewModel.swift in Sources */,
 				5B10172229F3B57E00AE55F3 /* extension + UILabel.swift in Sources */,
 				5B0697B129FCF3BE00AE8F90 /* DetailFoodInformationResponseDTO.swift in Sources */,
 				5B10172429F3B85B00AE55F3 /* extension + UIColor.swift in Sources */,
