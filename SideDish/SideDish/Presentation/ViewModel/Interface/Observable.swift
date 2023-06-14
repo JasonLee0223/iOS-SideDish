@@ -9,11 +9,11 @@ import Foundation
 
 final class Observable<T> {
     
-    typealias Listener = ([T]?) throws -> Void
+    typealias Listener = (T?) throws -> Void
     
     var listener: Listener?
     
-    var value: [T]? {
+    var value: T? {
         didSet {
             do {
                 try listener?(value)
@@ -23,7 +23,7 @@ final class Observable<T> {
         }
     }
     
-    init(_ value: [T]? = nil) {
+    init(_ value: T? = nil) {
         self.value = value
     }
     
