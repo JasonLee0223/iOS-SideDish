@@ -17,7 +17,9 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         return Section.allCases.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        
         switch self.headers[section] {
         case .main:
             return foods[Section.main]?.count ?? 0
