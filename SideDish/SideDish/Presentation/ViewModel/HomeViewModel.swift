@@ -56,22 +56,20 @@ extension HomeViewModel {
             ).body
             
             for foodInformationDTO in networkResult {
-                guard let imageURL = URL(string: foodInformationDTO.foodImage) else {
-                    throw ErrorOfHomeViewModel.FailOfMakeURL
+                let imagePath = foodInformationDTO.foodImage
+                
+                if foodInformationDTO.title == "두부조림" {
+                    let checkImagePath = imagePath.dropLast(4)
+                    let aaa = String(checkImagePath)
+                    
+                    try makeFoodEntity(with: aaa, foodInformationDTO: foodInformationDTO) { foodEntity in
+                        foods.append(foodEntity)
+                    }
+                } else {
+                    try makeFoodEntity(with: imagePath, foodInformationDTO: foodInformationDTO) { foodEntity in
+                        foods.append(foodEntity)
+                    }
                 }
-                
-                let imageData = try Data(contentsOf: imageURL)
-                
-                let food = Food(
-                    foodImage: imageData, foodInformation: Information(
-                        foodName: foodInformationDTO.title,
-                        foodDescription: foodInformationDTO.description
-                    ), cost: Cost(
-                        primeCost: foodInformationDTO.normalPrice ?? "",
-                        saleCost: foodInformationDTO.salePrice ?? ""
-                    )
-                )
-                foods.append(food)
             }
         } catch {
             print(ErrorOfHomeViewModel.EmptyOfOpenAPIData.errorDescription)
