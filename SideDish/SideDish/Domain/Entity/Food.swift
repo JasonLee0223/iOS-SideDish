@@ -13,7 +13,6 @@ struct Food: FoodItem, Hashable {
     var cost: Cost
 }
 
-
 internal struct Information: Hashable {
     let foodName: String
     let foodDescription: String
