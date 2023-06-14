@@ -42,12 +42,12 @@ extension HomeViewModel {
         
         Section.allCases.forEach { section in
             Task(priority: .background) {
-                await loadAllData(with: section)
+                try await loadAllData(with: section)
             }
         }
     }
     
-    private func loadAllData(with section: Section) async {
+    private func loadAllData(with section: Section) async throws {
         var foods = [Food]()
         
         do {
@@ -57,25 +57,22 @@ extension HomeViewModel {
             
             for foodInformationDTO in networkResult {
                 guard let imageURL = URL(string: foodInformationDTO.foodImage) else {
-                    return
+                    throw ErrorOfHomeViewModel.FailOfMakeURL
                 }
                 
                 let imageData = try Data(contentsOf: imageURL)
                 
                 let food = Food(
-                    foodImage: imageData,
-                    foodInformation: Information(
+                    foodImage: imageData, foodInformation: Information(
                         foodName: foodInformationDTO.title,
                         foodDescription: foodInformationDTO.description
-                    ),
-                    cost: Cost(
+                    ), cost: Cost(
                         primeCost: foodInformationDTO.normalPrice ?? "",
                         saleCost: foodInformationDTO.salePrice ?? ""
                     )
                 )
                 foods.append(food)
             }
-            
         } catch {
             print(ErrorOfHomeViewModel.EmptyOfOpenAPIData.errorDescription)
         }
