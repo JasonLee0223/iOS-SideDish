@@ -9,12 +9,12 @@ import Foundation
 
 final class HomeViewModel {
     
-    var sectionStorage: [Section: Observable<Food>]
+    var sectionStorage: [Section: Observable<[Food]>]
     
     init() {
         networkService = NetworkService()
         
-        sectionStorage = [.main: Observable<Food>(), .soup: Observable<Food>(), .side: Observable<Food>()]
+        sectionStorage = [.main: Observable<[Food]>(), .soup: Observable<[Food]>(), .side: Observable<[Food]>()]
     }
     
     private let networkService: NetworkService
