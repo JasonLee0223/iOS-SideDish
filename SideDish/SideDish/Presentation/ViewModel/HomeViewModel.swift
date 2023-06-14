@@ -32,8 +32,7 @@ extension HomeViewModel {
         let sectionType = Section.allCases[sectionNumber]
         
         guard let items = sectionStorage[sectionType]?.value else {
-//            throw print("\(#function) 잘못된 item 갯수")
-            throw NetworkError.emptyData
+            throw ErrorOfHomeViewModel.WrongCountToNumberOfItemsInSection
         }
         
         return items.count
@@ -78,7 +77,7 @@ extension HomeViewModel {
             }
             
         } catch {
-            print("Empty API Data")
+            print(ErrorOfHomeViewModel.EmptyOfOpenAPIData.errorDescription)
         }
         
         sectionStorage[section]?.value = foods
