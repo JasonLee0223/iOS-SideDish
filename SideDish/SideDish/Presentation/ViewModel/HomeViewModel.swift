@@ -79,4 +79,27 @@ extension HomeViewModel {
         
         sectionStorage[section]?.value = foods
     }
+    
+    private func makeFoodEntity(with foodName: String,
+                                foodInformationDTO: FoodInformationDTO,
+                                completion: (Food) -> Void) throws {
+        guard let imageURL = URL(string: foodName) else {
+            throw ErrorOfHomeViewModel.FailOfMakeURL
+        }
+        
+        guard let imageData = try? Data(contentsOf: imageURL) else {
+            throw ErrorOfHomeViewModel.EmptyOfImageData
+        }
+        
+        let food = Food(
+            foodImage: imageData, foodInformation: Information(
+                foodName: foodInformationDTO.title,
+                foodDescription: foodInformationDTO.description
+            ), cost: Cost(
+                primeCost: foodInformationDTO.normalPrice ?? "",
+                saleCost: foodInformationDTO.salePrice ?? ""
+            )
+        )
+        completion(food)
+    }
 }
