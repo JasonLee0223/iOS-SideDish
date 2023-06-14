@@ -14,7 +14,7 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     private var foods: [Section: [Food]] = [:]
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return headers.count
+        return Section.allCases.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
