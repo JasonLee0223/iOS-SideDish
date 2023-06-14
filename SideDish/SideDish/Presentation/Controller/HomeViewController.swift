@@ -9,7 +9,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let networkService = NetworkService()
     let homeCollectionViewDataSource = HomeCollectionViewDataSource()
     
     override func viewDidLoad() {
@@ -18,7 +17,8 @@ class HomeViewController: UIViewController {
         configureOfUIComponents()
         
         configureOfSuperViewLayout()
-        fetchData()
+        
+        homeCollectionViewDataSource.homeViewModel.fetchOfData()
     }
     
     //MARK: - Private Property
@@ -75,62 +75,4 @@ extension HomeViewController {
             collectionView.trailingAnchor.constraint(equalTo: superViewSafeArea.trailingAnchor)
         ])
     }
-}
-
-//MARK: - Configure of NetworkService
-extension HomeViewController {
-    
-    private func fetchData() {
-        
-        Section.allCases.forEach { section in
-            
-            Task {
-                let networkResult = try await networkService.request(
-                    with: APIEndpoint.supplyFoodInformation(
-                        with: section.offerMenuName
-                    )
-                ).body
-                
-                var foodDataStorage = [Food]()
-                
-                for result in networkResult {
-                    guard let imageURL = URL(string: result.foodImage) else {
-                        return
-                    }
-                    
-                    let imageData = try Data(contentsOf: imageURL)
-                    
-                    let makeFoodItem = Food(
-                        foodImage: imageData,
-                        foodInformation: Information(
-                            foodName: result.title,
-                            foodDescription: result.description
-                         ),
-                        cost: Cost(
-                            primeCost: result.normalPrice ?? "",
-                            saleCost: result.salePrice ?? ""
-                         )
-                    )
-                    
-                    foodDataStorage.append(makeFoodItem)
-                }
-                
-                print(section)
-                
-                switch section {
-                case .main:
-                    self.homeCollectionViewDataSource.fetch(foods: foodDataStorage, section: section)
-                    self.collectionView.reloadData()
-                case .soup:
-                    self.homeCollectionViewDataSource.fetch(foods: foodDataStorage, section: section)
-                    self.collectionView.reloadData()
-                case .side:
-                    self.homeCollectionViewDataSource.fetch(foods: foodDataStorage, section: section)
-                    self.collectionView.reloadData()
-                }
-            }
-        }
-        
-    }
-    
 }
