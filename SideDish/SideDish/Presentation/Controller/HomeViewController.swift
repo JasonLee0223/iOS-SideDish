@@ -100,11 +100,13 @@ extension HomeViewController {
                     
                     let imageData = try Data(contentsOf: imageURL)
                     
-                    let makeFoodItem = Food(foodImage: UIImage(data: imageData),
-                         foodInformation: Information(
+                    let makeFoodItem = Food(
+                        foodImage: imageData,
+                        foodInformation: Information(
                             foodName: result.title,
                             foodDescription: result.description
-                         ), cost: Cost(
+                         ),
+                        cost: Cost(
                             primeCost: result.normalPrice ?? "",
                             saleCost: result.salePrice ?? ""
                          )
