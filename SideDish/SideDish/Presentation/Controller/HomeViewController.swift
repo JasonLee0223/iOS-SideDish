@@ -22,25 +22,9 @@ class HomeViewController: UIViewController {
     }
     
     //MARK: - Private Property
-    private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(
-            frame: .zero, collectionViewLayout: configreOfCollectionViewFlowLayout()
-        )
-        collectionView.showsVerticalScrollIndicator = true
-        collectionView.clipsToBounds = true
-        collectionView.dataSource = homeCollectionViewDataSource
-        
-        collectionView.register(
-            HomeHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: HomeHeaderView.identifier
-        )
-        
-        collectionView.register(
-            HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.identifier
-        )
-        
-        return collectionView
-    }()
+    private let collectionView: UICollectionView = UICollectionView(
+        frame: .zero, collectionViewLayout: UICollectionViewLayout()
+    )
 }
 
 //MARK: - Configure of UI Components
@@ -49,6 +33,8 @@ extension HomeViewController {
     private func configureOfUIComponents() {
         configureOfSuperView()
         configureOfNavigationBar()
+        configureOfCollectionView()
+        updateDataSource()
     }
     
     private func configureOfSuperView() {
@@ -57,6 +43,30 @@ extension HomeViewController {
     
     private func configureOfNavigationBar() {
         navigationItem.title = "Ordering"
+    }
+    
+    private func configureOfCollectionView() {
+        
+        collectionView.isScrollEnabled = true
+        collectionView.showsVerticalScrollIndicator = true
+        collectionView.clipsToBounds = true
+        collectionView.collectionViewLayout = configreOfCollectionViewFlowLayout()
+        
+        collectionView.register(
+            HomeHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: HomeHeaderView.identifier
+        )
+        
+        collectionView.register(
+            HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.identifier
+        )
+    }
+    
+    private func updateDataSource() {
+        Task(priority: .high) {
+            collectionView.dataSource = homeCollectionViewDataSource
+        }
     }
 }
         
@@ -74,5 +84,14 @@ extension HomeViewController {
             collectionView.leadingAnchor.constraint(equalTo: superViewSafeArea.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: superViewSafeArea.trailingAnchor)
         ])
+    }
+    
+    func configreOfCollectionViewFlowLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewFlowLayout()
+        let headerSize = CGSize(width: self.view.frame.width, height: 130)
+        let itemSize = CGSize(width:self.view.frame.width, height: 130)
+        layout.headerReferenceSize = headerSize
+        layout.itemSize = itemSize
+        return layout
     }
 }
