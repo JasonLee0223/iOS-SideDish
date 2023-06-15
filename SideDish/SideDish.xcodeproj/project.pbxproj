@@ -369,18 +369,18 @@
 			isa = PBXGroup;
 			children = (
 				5B6CD7642A39AA9C0066A672 /* Error */,
-				5B6CD75F2A3777470066A672 /* Interface */,
+				5B6CD75F2A3777470066A672 /* Utilities */,
 				5B6CD7622A3979FB0066A672 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		5B6CD75F2A3777470066A672 /* Interface */ = {
+		5B6CD75F2A3777470066A672 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				5B6CD7602A3777520066A672 /* Observable.swift */,
 			);
-			path = Interface;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		5B6CD7642A39AA9C0066A672 /* Error */ = {
