@@ -18,7 +18,7 @@ final class Observable<T> {
             do {
                 try listener?(value)
             } catch {
-//                print(HomeViewModelInError.dataIsEmpty)
+                print(ErrorOfHomeViewModel.EmptyOfOpenAPIData)
             }
         }
     }
