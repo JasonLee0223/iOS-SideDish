@@ -64,9 +64,9 @@ extension HomeViewModel {
                 
                 if foodInformationDTO.title == "두부조림" {
                     let checkImagePath = imagePath.dropLast(4)
-                    let aaa = String(checkImagePath)
+                    let verifyImagePath = String(checkImagePath)
                     
-                    try makeFoodEntity(with: aaa, foodInformationDTO: foodInformationDTO) { foodEntity in
+                    try makeFoodEntity(with: verifyImagePath, foodInformationDTO: foodInformationDTO) { foodEntity in
                         foods.append(foodEntity)
                     }
                 } else {
