@@ -12,6 +12,7 @@ final class HomeViewCell: UICollectionViewCell, Reusable {
     //MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .systemGray5
         configuration()
     }
     
@@ -43,17 +44,16 @@ final class HomeViewCell: UICollectionViewCell, Reusable {
         configureStackViewLayout()
     }
     
+    private func prepareForReuse(stackView: UIStackView) {
+        stackView.subviews.forEach { view in
+            view.removeFromSuperview()
+        }
+    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         prepareForReuse(stackView: foodInformationStackView.foodPriceStackView)
         prepareForReuse(stackView: foodInformationStackView.badgeStackView)
-    }
-    
-    private func prepareForReuse(stackView: UIStackView) {
-        stackView.subviews.forEach { view in
-            view.removeFromSuperview()
-        }
     }
 }
 
@@ -81,7 +81,36 @@ extension HomeViewCell {
 
 //MARK: - Define UI Component
 extension HomeViewCell {
-    func setFoodImage(image: UIImage) {
+    func configure(of food: Food) {
+        
+        guard let foodImage = UIImage(data: food.foodImage) else {
+            return
+        }
+        
+        setFoodImage(image: foodImage)
+        
+        foodInformationStackView.setTitle(
+            by: food.foodInformation.foodName
+        )
+        
+        foodInformationStackView.setDescription(
+            by: food.foodInformation.foodDescription
+        )
+        
+        foodInformationStackView.setPrimeCost(
+            by: food.foodInformation.foodDescription
+        )
+        
+        foodInformationStackView.setPrimeCost(
+            by: food.cost.primeCost
+        )
+        
+        foodInformationStackView.setDescription(
+            by: food.cost.saleCost
+        )
+    }
+    
+    private func setFoodImage(image: UIImage) {
         self.foodImageView.image = image
     }
 }

@@ -70,17 +70,11 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         return cell
     }
     
-    private func configure(cell: HomeViewCell, food: Food) {
-        guard let foodImage = UIImage(data: food.foodImage) else {
-            return
+            print("반복문 끝")
+            print("---------------------------------------")
         }
         
-        cell.setFoodImage(image: foodImage)
-        cell.foodInformationStackView.setTitle(by: food.foodInformation.foodName)
-        cell.foodInformationStackView.setDescription(by: food.foodInformation.foodDescription)
-        cell.foodInformationStackView.setPrimeCost(by: food.cost.primeCost)
-        cell.foodInformationStackView.setDiscountedCost(by: food.cost.saleCost)
-//        cell.menuStackView.setBadges(by: food)
+        return cell
     }
     
     let homeViewModel: HomeViewModel
