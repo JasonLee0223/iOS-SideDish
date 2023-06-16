@@ -34,15 +34,11 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         case UICollectionView.elementKindSectionHeader:
             
             guard let headerView = collectionView.dequeueReusableSupplementaryView(
-                ofKind: kind,
-                withReuseIdentifier: HomeHeaderView.identifier,
-                for: indexPath) as? HomeHeaderView else {
+                ofKind: kind, withReuseIdentifier: HomeHeaderView.identifier, for: indexPath) as? HomeHeaderView else {
                 return UICollectionReusableView()
             }
             
-            Section.allCases.forEach { _ in
-                headerView.setTitle(headerText: Section(rawValue: indexPath.section)?.headerTitle)
-            }
+            headerView.setTitle(headerText: Section(rawValue: indexPath.section)?.headerTitle)
             
             return headerView
         default:
