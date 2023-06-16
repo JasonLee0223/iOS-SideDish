@@ -15,8 +15,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         configureOfUIComponents()
-        
         configureOfSuperViewLayout()
+        homeCollectionViewDataSource.homeViewModel.fetchOfData()
     }
     
     //MARK: - Private Property
