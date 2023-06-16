@@ -14,8 +14,12 @@ final class HomeViewModel {
     init() {
         networkService = NetworkService()
         
-        sectionStorage = [.main: Observable<[Food]>(), .soup: Observable<[Food]>(), .side: Observable<[Food]>()]
-    }
+        sectionStorage = [
+            .main: Observable<[Food]>(),
+            .soup: Observable<[Food]>(),
+            .side: Observable<[Food]>()
+        ]
+}
     
     private let networkService: NetworkService
 }
