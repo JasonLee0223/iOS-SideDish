@@ -11,6 +11,12 @@ final class HomeViewModel {
     
     var sectionStorage: [Section: Observable<[Food]>]
     
+    var itemsInSection = 0 {
+        didSet {
+            print("Section Item Update = \(itemsInSection)")
+        }
+    }
+    
     init() {
         networkService = NetworkService()
         
@@ -29,18 +35,6 @@ extension HomeViewModel {
     
     func countOfSection() -> Int {
         return sectionStorage.count
-    }
-    
-    func countOfItemsInSection(with sectionNumber: Int) async -> Int {
-        guard let sectionType = Section(rawValue: sectionNumber) else {
-            return 0
-        }
-        
-        guard let bindModels = sectionStorage[sectionType]?.value else {
-            return 0
-        }
-        
-        return bindModels.count
     }
     
     func getFoodInfo(with section: Section, indexPath: IndexPath) async throws -> Food {
@@ -96,6 +90,7 @@ extension HomeViewModel {
         }
         
         sectionStorage[section]?.value = foods
+        itemsInSection = foods.count
     }
     
     private func makeFoodEntity(with foodName: String,
