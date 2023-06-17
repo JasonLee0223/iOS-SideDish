@@ -17,6 +17,18 @@ class HomeViewController: UIViewController {
         configureOfUIComponents()
         configureOfSuperViewLayout()
         homeCollectionViewDataSource.homeViewModel.fetchOfData()
+        reload()
+    }
+    
+    func reload() {
+        
+        let observableData = homeCollectionViewDataSource.homeViewModel.sectionStorage[.main]
+        
+        observableData?.bind(listener: { _ in
+            Task {
+                self.collectionView.reloadData()
+            }
+        })
     }
     
     //MARK: - Private Property
