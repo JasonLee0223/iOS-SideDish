@@ -52,6 +52,7 @@ final class HomeViewCell: UICollectionViewCell, Reusable {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        foodImageView.image = nil
         prepareForReuse(stackView: foodInformationStackView.foodPriceStackView)
         prepareForReuse(stackView: foodInformationStackView.badgeStackView)
     }
