@@ -127,15 +127,17 @@ extension FoodInformation {
     
     func setDiscountedCost(by text: String) {
         discountedCostContent.text = text
+        convertTextStyleToStrikethrough(from: discountedCostContent)
     }
     
     func setCostChoose(between primeCost: String?, or discountedCost: String?) {
-        guard let discountedCost = discountedCost else { return }
         
-        if let primeCost = primeCost {
+        guard let discountedCost = discountedCost else { return }
+        guard let primeCost = primeCost else { return }
+        
+        if !primeCost.isEmpty && !discountedCost.isEmpty {
             setPrimeCost(by: primeCost)
             setDiscountedCost(by: discountedCost)
-            convertTextStyleToStrikethrough(from: discountedCostContent)
             foodPriceStackView.addArrangedSubview(primeCostContent)
             foodPriceStackView.addArrangedSubview(discountedCostContent)
         } else {
