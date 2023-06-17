@@ -54,24 +54,17 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        Section.allCases.forEach { section in
-            
-            homeViewModel.fetchOfData()
-            
-            guard let foods = homeViewModel.sectionStorage[section]?.value else {
-                return
-            }
-            
-            foods.forEach { food in
-                configure(cell: cell, food: food)
-                collectionView.reloadData()
-            }
+        guard let sectionType = Section(rawValue: indexPath.section) else {
+            return UICollectionViewCell()
         }
-        return cell
-    }
-    
-            print("반복문 끝")
-            print("---------------------------------------")
+        
+        Task {
+
+            let getFood = try await homeViewModel.getFoodInfo(with: sectionType, indexPath: indexPath)
+
+            print(getFood.foodInformation.foodName)
+
+            cell.configure(of: getFood)
         }
         
         return cell
