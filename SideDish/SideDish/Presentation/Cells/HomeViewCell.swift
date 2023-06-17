@@ -99,14 +99,10 @@ extension HomeViewCell {
         )
         
         foodInformationStackView.setPrimeCost(
-            by: food.foodInformation.foodDescription
-        )
-        
-        foodInformationStackView.setPrimeCost(
             by: food.cost.primeCost
         )
         
-        foodInformationStackView.setDescription(
+        foodInformationStackView.setDiscountedCost(
             by: food.cost.saleCost
         )
     }
