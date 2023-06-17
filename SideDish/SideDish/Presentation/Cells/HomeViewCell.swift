@@ -42,10 +42,17 @@ final class HomeViewCell: UICollectionViewCell, Reusable {
         configureOfCellLayout()
         configureStackViewLayout()
     }
+        
+    private func prepareForReuse(stackView: UIStackView) {
+        stackView.subviews.forEach { view in
+            view.removeFromSuperview()
+        }
+    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         foodImageView.image = nil
+        prepareForReuse(stackView: foodInformationStackView.badgeStackView)
     }
 }
 
@@ -92,6 +99,8 @@ extension HomeViewCell {
         foodInformationStackView.setCostChoose(
             between: food.cost.primeCost, or: food.cost.saleCost
         )
+        
+        foodInformationStackView.setBadge(by: food.badge)
     }
     
     private func setFoodImage(image: UIImage) {
