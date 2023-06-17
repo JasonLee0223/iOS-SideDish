@@ -31,9 +31,17 @@ extension HomeViewModel {
         return sectionStorage.count
     }
     
-    func countItem(of sectionNumber: Int) async throws -> Int {
+    func countOfItemsInSection(with sectionNumber: Int) async -> Int {
+        guard let sectionType = Section(rawValue: sectionNumber) else {
+            return 0
+        }
         
-        let sectionType = Section.allCases[sectionNumber]
+        guard let bindModels = sectionStorage[sectionType]?.value else {
+            return 0
+        }
+        
+        return bindModels.count
+    }
         
         guard let items = sectionStorage[sectionType]?.value else {
             throw ErrorOfHomeViewModel.WrongCountToNumberOfItemsInSection
