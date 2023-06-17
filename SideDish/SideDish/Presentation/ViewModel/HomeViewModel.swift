@@ -19,7 +19,7 @@ final class HomeViewModel {
             .soup: Observable<[Food]>(),
             .side: Observable<[Food]>()
         ]
-}
+    }
     
     private let networkService: NetworkService
 }
@@ -42,13 +42,19 @@ extension HomeViewModel {
         
         return bindModels.count
     }
+    
+    func getFoodInfo(with section: Section, indexPath: IndexPath) async throws -> Food {
         
-        guard let items = sectionStorage[sectionType]?.value else {
-            throw ErrorOfHomeViewModel.WrongCountToNumberOfItemsInSection
+        guard let foods = sectionStorage[section]?.value else {
+            throw ErrorOfHomeViewModel.EmptyOfOpenAPIData
         }
         
-        return items.count
+        return foods[indexPath.row]
     }
+}
+
+//MARK: - Fetch
+extension HomeViewModel {
     
     func fetchOfData() {
         
