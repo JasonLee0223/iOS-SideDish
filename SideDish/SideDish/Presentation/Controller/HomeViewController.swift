@@ -20,7 +20,16 @@ class HomeViewController: UIViewController {
         reload()
     }
     
-    func reload() {
+    //MARK: - Private Property
+    private let collectionView: UICollectionView = UICollectionView(
+        frame: .zero, collectionViewLayout: UICollectionViewLayout()
+    )
+}
+
+//MARK: - [Public] View Reload Method
+extension HomeViewController {
+    
+    private func reload() {
         
         let observableData = homeCollectionViewDataSource.homeViewModel.sectionStorage[.main]
         
@@ -30,11 +39,6 @@ class HomeViewController: UIViewController {
             }
         })
     }
-    
-    //MARK: - Private Property
-    private let collectionView: UICollectionView = UICollectionView(
-        frame: .zero, collectionViewLayout: UICollectionViewLayout()
-    )
 }
 
 //MARK: - Configure of UI Components
@@ -97,7 +101,7 @@ extension HomeViewController {
         ])
     }
     
-    func configreOfCollectionViewFlowLayout() -> UICollectionViewLayout {
+    private func configreOfCollectionViewFlowLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         let headerSize = CGSize(width: self.view.frame.width, height: 130)
         let itemSize = CGSize(width:self.view.frame.width, height: 130)
@@ -107,7 +111,7 @@ extension HomeViewController {
     }
 }
 
-//MARK: - CollectionViewDelegate
+//MARK: - Configure of CollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
