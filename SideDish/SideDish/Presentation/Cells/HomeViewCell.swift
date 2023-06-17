@@ -12,7 +12,6 @@ final class HomeViewCell: UICollectionViewCell, Reusable {
     //MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .systemGray5
         configuration()
     }
     
