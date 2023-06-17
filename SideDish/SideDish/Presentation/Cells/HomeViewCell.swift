@@ -44,17 +44,9 @@ final class HomeViewCell: UICollectionViewCell, Reusable {
         configureStackViewLayout()
     }
     
-    private func prepareForReuse(stackView: UIStackView) {
-        stackView.subviews.forEach { view in
-            view.removeFromSuperview()
-        }
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         foodImageView.image = nil
-        prepareForReuse(stackView: foodInformationStackView.foodPriceStackView)
-        prepareForReuse(stackView: foodInformationStackView.badgeStackView)
     }
 }
 
