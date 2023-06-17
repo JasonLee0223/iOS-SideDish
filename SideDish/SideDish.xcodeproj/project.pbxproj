@@ -41,6 +41,7 @@
 		5B6CD7662A39AAB50066A672 /* ErrorOfHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD7652A39AAB50066A672 /* ErrorOfHomeViewModel.swift */; };
 		5B7806642A12491100809012 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7806632A12491100809012 /* Reusable.swift */; };
 		5BAA13202A060B0300C7E64A /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */; };
+		5BDBB0FF2A3DE51500D03F23 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDBB0FE2A3DE51500D03F23 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		5B6CD7652A39AAB50066A672 /* ErrorOfHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorOfHomeViewModel.swift; sourceTree = "<group>"; };
 		5B7806632A12491100809012 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		5BDBB0FE2A3DE51500D03F23 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				5B10170529F38F3F00AE55F3 /* HomeViewController.swift */,
+				5BDBB0FE2A3DE51500D03F23 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				5B10170229F38F3F00AE55F3 /* AppDelegate.swift in Sources */,
 				5B0697AC29FCF19100AE8F90 /* FoodInformationResponseDTO.swift in Sources */,
 				5B0697BE29FD062E00AE8F90 /* HTTPError.swift in Sources */,
+				5BDBB0FF2A3DE51500D03F23 /* DetailViewController.swift in Sources */,
 				5B0697B629FCF9CD00AE8F90 /* FoodInformationRequestDTO.swift in Sources */,
 				5B10172629F3CB6E00AE55F3 /* HomeViewCell.swift in Sources */,
 				5B0697AF29FCF37200AE8F90 /* DetailFoodInfromationDTO.swift in Sources */,
