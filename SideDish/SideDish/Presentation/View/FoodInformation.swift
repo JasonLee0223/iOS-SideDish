@@ -46,34 +46,33 @@ final class FoodInformation: UIStackView {
         return badgeStackView
     }()
     
-    private var foodTitle: UILabel = {
+    private let foodTitle: UILabel = {
         let foodTitle = UILabel()
         foodTitle.font = .boldSystemFont(ofSize: 14)
         foodTitle.textColor = .black
         return foodTitle
     }()
     
-    private var foodDescription: UILabel = {
+    private let foodDescription: UILabel = {
         let foodDescription = UILabel()
         foodDescription.font = .systemFont(ofSize: 14)
         foodDescription.textColor = .systemGray2
         return foodDescription
     }()
     
-    private var primeCostContent: UILabel = {
+    private let primeCostContent: UILabel = {
         let primeCostContent = UILabel()
         primeCostContent.font = .boldSystemFont(ofSize: 14)
         primeCostContent.textColor = .black
         return primeCostContent
     }()
     
-    private var discountedCostContent: UILabel = {
+    private let discountedCostContent: UILabel = {
         let discountedCostContent = UILabel()
         discountedCostContent.font = .systemFont(ofSize: 14)
         discountedCostContent.textColor = .systemGray2
         return discountedCostContent
     }()
-    
 }
 
 //MARK: - Configure Of Layout
@@ -91,7 +90,6 @@ extension FoodInformation {
             foodInformationStackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             foodInformationStackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             foodInformationStackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            foodInformationStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
             foodInformationStackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 72)
         ])
     }
@@ -99,6 +97,7 @@ extension FoodInformation {
     private func configurationComponents() {
         configureFoodInformationStackView()
         addArrangedSubview(foodInformationStackView)
+        addArrangedSubview(badgeStackView)
         configureOfLayout()
         
         foodInformationStackView.addArrangedSubview(foodTitle)
@@ -107,7 +106,6 @@ extension FoodInformation {
         
         foodPriceStackView.addArrangedSubview(primeCostContent)
         foodPriceStackView.addArrangedSubview(discountedCostContent)
-//        addArrangedSubview(badgeStackView)
     }
 }
 
@@ -137,6 +135,32 @@ extension FoodInformation {
         }
     }
     
+    func setBadge(by bargainPriceTypes: [String]?) {
+        guard let bargainPriceTypes = bargainPriceTypes else { return }
+        
+        bargainPriceTypes.forEach { priceType in
+            switch BargainPriceTypeList(rawValue: priceType) {
+            case .best:
+                let badge = UILabel.makeBadge(
+                    title: priceType, backgroundColor: UIColor.launchingBadgeBackground
+                )
+                badgeStackView.addArrangedSubview(badge)
+            case .new:
+                let badge = UILabel.makeBadge(
+                    title: priceType, backgroundColor: UIColor.eventBadgeBackground
+                )
+                badgeStackView.addArrangedSubview(badge)
+            case .season:
+                let badge = UILabel.makeBadge(
+                    title: priceType, backgroundColor: UIColor.defaultBadgeBackground
+                )
+                badgeStackView.addArrangedSubview(badge)
+            case .none:
+                return
+            }
+        }
+    }
+    
     private func setPrimeCost(by text: String) {
         primeCostContent.text = text
     }
@@ -155,25 +179,5 @@ extension FoodInformation {
                                      range: NSRange(location: 0, length: attributeString.length))
         label.textColor = .systemGray2
         label.attributedText = attributeString
-    }
-    
-    private func setBadge(by bargainPriceTypes: [String]?) {
-        guard let bargainPriceTypes = bargainPriceTypes else { return }
-        
-        bargainPriceTypes.forEach { priceType in
-            switch BargainPriceTypeList(rawValue: priceType) {
-            case .best:
-                let badge = UILabel.makeBadge(title: priceType, backgroundColor: UIColor.launchingBadgeBackground)
-                badgeStackView.addArrangedSubview(badge)
-            case .new:
-                let badge = UILabel.makeBadge(title: priceType, backgroundColor: UIColor.eventBadgeBackground)
-                badgeStackView.addArrangedSubview(badge)
-            case .season:
-                let badge = UILabel.makeBadge(title: priceType, backgroundColor: UIColor.defaultBadgeBackground)
-                badgeStackView.addArrangedSubview(badge)
-            case .none:
-                return
-            }
-        }
     }
 }
