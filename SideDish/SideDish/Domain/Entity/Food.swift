@@ -8,9 +8,10 @@
 import Foundation
 
 struct Food: FoodItem, Hashable {
-    var foodImage: Data
-    var foodInformation: Information
-    var cost: Cost
+    let foodImage: Data
+    let foodInformation: Information
+    let cost: Cost
+    let badge: [String]?
 }
 
 internal struct Information: Hashable {

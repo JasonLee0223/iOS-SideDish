@@ -116,7 +116,7 @@ extension HomeViewModel {
             ), cost: Cost(
                 primeCost: foodInformationDTO.normalPrice ?? "",
                 saleCost: foodInformationDTO.salePrice ?? ""
-            )
+            ), badge: foodInformationDTO.badge
         )
         completion(food)
     }
