@@ -8,11 +8,12 @@
 import UIKit
 
 final class DetailViewController: UIViewController {
+    
+    var detailFoodCode: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-    var myTitle: String?
 }

@@ -116,7 +116,18 @@ extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        guard let sectionType = Section(rawValue: indexPath.section) else {
+            return
+        }
+        
+        guard let bindModels = homeCollectionViewDataSource.homeViewModel.sectionStorage[sectionType]?.value else {
+            return
+        }
+        
+        let selectedFood = bindModels[indexPath.row]
+        
         let detailViewController = DetailViewController()
+        detailViewController.detailFoodCode = selectedFood.foodCode
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
