@@ -87,20 +87,27 @@ extension FoodInformation {
     
     private func configureOfLayout() {
         foodInformationStackView.translatesAutoresizingMaskIntoConstraints = false
-        foodInformationStackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 72).isActive = true
+        NSLayoutConstraint.activate([
+            foodInformationStackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            foodInformationStackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            foodInformationStackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            foodInformationStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+            foodInformationStackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 72)
+        ])
     }
     
     private func configurationComponents() {
         configureFoodInformationStackView()
         addArrangedSubview(foodInformationStackView)
+        configureOfLayout()
+        
         foodInformationStackView.addArrangedSubview(foodTitle)
         foodInformationStackView.addArrangedSubview(foodDescription)
         foodInformationStackView.addArrangedSubview(foodPriceStackView)
         
         foodPriceStackView.addArrangedSubview(primeCostContent)
         foodPriceStackView.addArrangedSubview(discountedCostContent)
-        addArrangedSubview(badgeStackView)
-        configureOfLayout()
+//        addArrangedSubview(badgeStackView)
     }
 }
 
