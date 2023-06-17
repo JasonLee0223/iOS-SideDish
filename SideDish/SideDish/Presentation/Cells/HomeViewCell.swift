@@ -89,12 +89,8 @@ extension HomeViewCell {
             by: food.foodInformation.foodDescription
         )
         
-        foodInformationStackView.setPrimeCost(
-            by: food.cost.primeCost
-        )
-        
-        foodInformationStackView.setDiscountedCost(
-            by: food.cost.saleCost
+        foodInformationStackView.setCostChoose(
+            between: food.cost.primeCost, or: food.cost.saleCost
         )
     }
     
