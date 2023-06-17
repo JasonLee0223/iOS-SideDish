@@ -28,7 +28,8 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         return verifyToItemsCount
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         switch kind {
         case UICollectionView.elementKindSectionHeader:
@@ -49,8 +50,7 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: HomeViewCell.identifier, for: indexPath
-        ) as? HomeViewCell else {
+            withReuseIdentifier: HomeViewCell.identifier, for: indexPath) as? HomeViewCell else {
             return UICollectionViewCell()
         }
         
