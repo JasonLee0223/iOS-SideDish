@@ -105,6 +105,7 @@ extension HomeViewModel {
         }
         
         let food = Food(
+            foodCode: foodInformationDTO.detailHash,
             foodImage: imageData, foodInformation: Information(
                 foodName: foodInformationDTO.title,
                 foodDescription: foodInformationDTO.description

@@ -8,6 +8,7 @@
 import Foundation
 
 struct Food: FoodItem, Hashable {
+    let foodCode: String
     let foodImage: Data
     let foodInformation: Information
     let cost: Cost
