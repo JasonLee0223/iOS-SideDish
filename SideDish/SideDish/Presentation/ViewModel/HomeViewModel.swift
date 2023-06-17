@@ -66,11 +66,13 @@ extension HomeViewModel {
                     let checkImagePath = imagePath.dropLast(4)
                     let verifyImagePath = String(checkImagePath)
                     
-                    try makeFoodEntity(with: verifyImagePath, foodInformationDTO: foodInformationDTO) { foodEntity in
+                    try makeFoodEntity(with: verifyImagePath,
+                                       foodInformationDTO: foodInformationDTO) { foodEntity in
                         foods.append(foodEntity)
                     }
                 } else {
-                    try makeFoodEntity(with: imagePath, foodInformationDTO: foodInformationDTO) { foodEntity in
+                    try makeFoodEntity(with: imagePath,
+                                       foodInformationDTO: foodInformationDTO) { foodEntity in
                         foods.append(foodEntity)
                     }
                 }
