@@ -59,11 +59,7 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         }
         
         Task {
-
             let getFood = try await homeViewModel.getFoodInfo(with: sectionType, indexPath: indexPath)
-
-            print(getFood.foodInformation.foodName)
-
             cell.configure(of: getFood)
         }
         
