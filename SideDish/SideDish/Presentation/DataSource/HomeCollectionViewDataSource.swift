@@ -19,13 +19,8 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        var verifyToItemsCount = 0
-        
-        Task {
-            verifyToItemsCount  = try await homeViewModel.countItem(of: section)
-        }
-        
-        return verifyToItemsCount
+
+        return homeViewModel.itemsInSection
     }
     
     func collectionView(_ collectionView: UICollectionView,
