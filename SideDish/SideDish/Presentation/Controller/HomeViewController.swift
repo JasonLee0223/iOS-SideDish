@@ -76,6 +76,7 @@ extension HomeViewController {
     private func updateDataSource() {
         Task(priority: .high) {
             collectionView.dataSource = homeCollectionViewDataSource
+            collectionView.delegate = self
         }
     }
 }
@@ -103,5 +104,15 @@ extension HomeViewController {
         layout.headerReferenceSize = headerSize
         layout.itemSize = itemSize
         return layout
+    }
+}
+
+//MARK: - CollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let detailViewController = DetailViewController()
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
