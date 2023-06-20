@@ -32,5 +32,9 @@ final class DetailViewController: UIViewController {
         
     }
     
+    private let collectionView: UICollectionView = UICollectionView(
+        frame: .zero, collectionViewLayout: UICollectionViewLayout()
+    )
+    
     private let networkService = NetworkService()
 }
