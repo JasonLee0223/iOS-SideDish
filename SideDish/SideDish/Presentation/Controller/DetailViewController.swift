@@ -29,7 +29,8 @@ final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configuerOfUI()
+        configureHierarchy()
     }
     
     private let collectionView: UICollectionView = UICollectionView(
@@ -38,6 +39,7 @@ final class DetailViewController: UIViewController {
     
     private let networkService = NetworkService()
 }
+
 //MARK: - Configure of UI Components
 extension DetailViewController {
     
