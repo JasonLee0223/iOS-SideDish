@@ -49,3 +49,20 @@ extension DetailViewController {
         collectionView.backgroundColor = .systemGray
     }
 }
+
+//MARK: - Configure of Layout
+extension DetailViewController {
+    
+    private func configureHierarchy() {
+        let safeArea = self.view.safeAreaLayoutGuide
+        
+        self.view.addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+        ])
+    }
+}
