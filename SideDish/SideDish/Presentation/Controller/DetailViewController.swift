@@ -38,3 +38,14 @@ final class DetailViewController: UIViewController {
     
     private let networkService = NetworkService()
 }
+//MARK: - Configure of UI Components
+extension DetailViewController {
+    
+    private func configuerOfUI() {
+        configureOfCollectionView()
+    }
+    
+    private func configureOfCollectionView() {
+        collectionView.backgroundColor = .systemGray
+    }
+}
