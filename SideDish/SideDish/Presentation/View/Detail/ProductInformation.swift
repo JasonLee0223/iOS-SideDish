@@ -42,5 +42,14 @@ extension ProductInformation {
             foodThumbScroll.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor),
             foodThumbScroll.heightAnchor.constraint(equalToConstant: 376),
         ])
+        
+        self.addSubview(detailFoodInfo)
+        detailFoodInfo.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            detailFoodInfo.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            detailFoodInfo.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            detailFoodInfo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            detailFoodInfo.heightAnchor.constraint(equalToConstant: 152)
+        ])
     }
 }
