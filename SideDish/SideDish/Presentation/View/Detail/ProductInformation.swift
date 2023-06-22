@@ -1,5 +1,5 @@
 //
-//  DetailFoodInformation.swift
+//  ProductInformation.swift
 //  SideDish
 //
 //  Created by Jason on 2023/06/22.
@@ -8,7 +8,7 @@
 import UIKit
 
 //MARK: - Top Class
-class DetailFoodInformation: UIScrollView {
+class ProductInformation: UIScrollView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,7 +26,7 @@ class DetailFoodInformation: UIScrollView {
 }
 
 //MARK: - Configure of Layout
-extension DetailFoodInformation {
+extension ProductInformation {
     
     private func configureOfLayout() {
         self.addSubview(foodThumbScroll)

@@ -35,7 +35,7 @@ final class DetailViewController: UIViewController {
     
     private let networkService = NetworkService()
     
-    private let detailFoodInformation = DetailFoodInformation(frame: .zero)
+    private let detailFoodInformation = ProductInformation(frame: .zero)
 }
 
 //MARK: - Configure of UI Components

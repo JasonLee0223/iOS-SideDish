@@ -42,7 +42,8 @@
 		5B7806642A12491100809012 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7806632A12491100809012 /* Reusable.swift */; };
 		5BAA13202A060B0300C7E64A /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */; };
 		5BD4130B2A4416F20017D97D /* FoodThumbImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD4130A2A4416F20017D97D /* FoodThumbImages.swift */; };
-		5BD4130D2A4417460017D97D /* DetailFoodInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD4130C2A4417460017D97D /* DetailFoodInformation.swift */; };
+		5BD4130F2A442FC80017D97D /* DetailFoodInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD4130E2A442FC80017D97D /* DetailFoodInfo.swift */; };
+		5BD413112A4430B80017D97D /* ProductInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD413102A4430B80017D97D /* ProductInformation.swift */; };
 		5BDBB0FF2A3DE51500D03F23 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDBB0FE2A3DE51500D03F23 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,7 +85,8 @@
 		5B7806632A12491100809012 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		5BD4130A2A4416F20017D97D /* FoodThumbImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodThumbImages.swift; sourceTree = "<group>"; };
-		5BD4130C2A4417460017D97D /* DetailFoodInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodInformation.swift; sourceTree = "<group>"; };
+		5BD4130E2A442FC80017D97D /* DetailFoodInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodInfo.swift; sourceTree = "<group>"; };
+		5BD413102A4430B80017D97D /* ProductInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductInformation.swift; sourceTree = "<group>"; };
 		5BDBB0FE2A3DE51500D03F23 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -418,8 +420,9 @@
 		5BD413092A4414090017D97D /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				5BD413102A4430B80017D97D /* ProductInformation.swift */,
 				5BD4130A2A4416F20017D97D /* FoodThumbImages.swift */,
-				5BD4130C2A4417460017D97D /* DetailFoodInformation.swift */,
+				5BD4130E2A442FC80017D97D /* DetailFoodInfo.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				5B06979C29FCE36600AE8F90 /* Respondable.swift in Sources */,
 				5B10170229F38F3F00AE55F3 /* AppDelegate.swift in Sources */,
 				5B0697AC29FCF19100AE8F90 /* FoodInformationResponseDTO.swift in Sources */,
+				5BD4130F2A442FC80017D97D /* DetailFoodInfo.swift in Sources */,
 				5B0697BE29FD062E00AE8F90 /* HTTPError.swift in Sources */,
 				5BDBB0FF2A3DE51500D03F23 /* DetailViewController.swift in Sources */,
 				5B0697B629FCF9CD00AE8F90 /* FoodInformationRequestDTO.swift in Sources */,
@@ -512,7 +516,6 @@
 				5B10172829F3D12A00AE55F3 /* HomeHeaderView.swift in Sources */,
 				5B6CD7632A3979FB0066A672 /* HomeViewModel.swift in Sources */,
 				5B10172229F3B57E00AE55F3 /* extension + UILabel.swift in Sources */,
-				5BD4130D2A4417460017D97D /* DetailFoodInformation.swift in Sources */,
 				5B0697B129FCF3BE00AE8F90 /* DetailFoodInformationResponseDTO.swift in Sources */,
 				5B10172429F3B85B00AE55F3 /* extension + UIColor.swift in Sources */,
 				5B6CD7662A39AAB50066A672 /* ErrorOfHomeViewModel.swift in Sources */,
@@ -529,6 +532,7 @@
 				5B0697A329FCE5AA00AE8F90 /* NetworkError.swift in Sources */,
 				5B0697A029FCE4DA00AE8F90 /* Endpoint.swift in Sources */,
 				5B10170429F38F3F00AE55F3 /* SceneDelegate.swift in Sources */,
+				5BD413112A4430B80017D97D /* ProductInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
