@@ -29,26 +29,20 @@ final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configuerOfUI()
+        
         configureHierarchy()
     }
     
-    private let collectionView: UICollectionView = UICollectionView(
-        frame: .zero, collectionViewLayout: UICollectionViewLayout()
-    )
-    
     private let networkService = NetworkService()
+    
+    private let detailFoodInformation = DetailFoodInformation(frame: .zero)
 }
 
 //MARK: - Configure of UI Components
 extension DetailViewController {
     
     private func configuerOfUI() {
-        configureOfCollectionView()
-    }
-    
-    private func configureOfCollectionView() {
-        collectionView.backgroundColor = .systemGray
+        
     }
 }
 
@@ -58,13 +52,13 @@ extension DetailViewController {
     private func configureHierarchy() {
         let safeArea = self.view.safeAreaLayoutGuide
         
-        self.view.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(detailFoodInformation)
+        detailFoodInformation.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            detailFoodInformation.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            detailFoodInformation.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            detailFoodInformation.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            detailFoodInformation.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
         ])
     }
 }
