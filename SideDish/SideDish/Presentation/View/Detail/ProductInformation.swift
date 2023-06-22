@@ -25,6 +25,12 @@ class ProductInformation: UIScrollView {
     private let foodThumbScroll = FoodThumbImages()
     private let detailFoodInfo = DetailFoodInfo()
     
+    private let divisionLine: UIView = {
+        let divisionLine = UIView()
+        divisionLine.backgroundColor = .systemGray4
+        return divisionLine
+    }()
+    
     private func setUp() {
         let foodInfo = ["오리 주물럭_반조리", "감칠맛 나는 매콤한 양념", "12,640", "15,800", "런칭특가"]
         detailFoodInfo.configureOfFoodInfoUIComponents(foodInfo: foodInfo)
@@ -46,10 +52,19 @@ extension ProductInformation {
         self.addSubview(detailFoodInfo)
         detailFoodInfo.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            detailFoodInfo.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            detailFoodInfo.topAnchor.constraint(equalTo: foodThumbScroll.bottomAnchor),
             detailFoodInfo.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             detailFoodInfo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
             detailFoodInfo.heightAnchor.constraint(equalToConstant: 152)
+        ])
+        
+        self.addSubview(divisionLine)
+        divisionLine.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            divisionLine.topAnchor.constraint(equalTo: detailFoodInfo.bottomAnchor, constant: 28),
+            divisionLine.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
+            divisionLine.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
+            divisionLine.heightAnchor.constraint(equalToConstant: 1)
         ])
     }
 }
