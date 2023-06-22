@@ -14,6 +14,7 @@ class ProductInformation: UIScrollView {
         super.init(frame: frame)
         backgroundColor = .systemGray
         configureOfLayout()
+        setUp()
     }
     
     required init?(coder: NSCoder) {
@@ -22,7 +23,12 @@ class ProductInformation: UIScrollView {
     }
     
     private let foodThumbScroll = FoodThumbImages()
-    private let foodInformation = FoodInformation()
+    private let detailFoodInfo = DetailFoodInfo()
+    
+    private func setUp() {
+        let foodInfo = ["오리 주물럭_반조리", "감칠맛 나는 매콤한 양념", "12,640", "15,800", "런칭특가"]
+        detailFoodInfo.configureOfFoodInfoUIComponents(foodInfo: foodInfo)
+    }
 }
 
 //MARK: - Configure of Layout
