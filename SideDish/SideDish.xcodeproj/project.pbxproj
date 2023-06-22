@@ -41,6 +41,7 @@
 		5B6CD7662A39AAB50066A672 /* ErrorOfHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD7652A39AAB50066A672 /* ErrorOfHomeViewModel.swift */; };
 		5B7806642A12491100809012 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7806632A12491100809012 /* Reusable.swift */; };
 		5BAA13202A060B0300C7E64A /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */; };
+		5BD4130B2A4416F20017D97D /* FoodThumbImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD4130A2A4416F20017D97D /* FoodThumbImages.swift */; };
 		5BDBB0FF2A3DE51500D03F23 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDBB0FE2A3DE51500D03F23 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		5B6CD7652A39AAB50066A672 /* ErrorOfHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorOfHomeViewModel.swift; sourceTree = "<group>"; };
 		5B7806632A12491100809012 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		5BAA131F2A060B0300C7E64A /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		5BD4130A2A4416F20017D97D /* FoodThumbImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodThumbImages.swift; sourceTree = "<group>"; };
 		5BDBB0FE2A3DE51500D03F23 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,6 +245,7 @@
 		5B10171629F38FAD00AE55F3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5BD413092A4414090017D97D /* Detail */,
 				5BD412FE2A42B8EC0017D97D /* Home */,
 				5B10172029F3B57000AE55F3 /* Extension */,
 				5BD412FF2A42B9280017D97D /* Environment */,
@@ -410,6 +413,14 @@
 			path = Environment;
 			sourceTree = "<group>";
 		};
+		5BD413092A4414090017D97D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4130A2A4416F20017D97D /* FoodThumbImages.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -482,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B10170629F38F3F00AE55F3 /* HomeViewController.swift in Sources */,
+				5BD4130B2A4416F20017D97D /* FoodThumbImages.swift in Sources */,
 				5B7806642A12491100809012 /* Reusable.swift in Sources */,
 				5B6CD75D2A37752F0066A672 /* HomeLayout.swift in Sources */,
 				5B06979C29FCE36600AE8F90 /* Respondable.swift in Sources */,
