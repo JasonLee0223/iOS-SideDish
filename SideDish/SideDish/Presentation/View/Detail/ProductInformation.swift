@@ -38,6 +38,7 @@ class ProductInformation: UIScrollView {
     private let detailFoodInfo = DetailFoodInfo()
     private let deliveryInformation = DeliveryInformation()
     private let orderCount = OrderCount()
+    private let orderAmount = OrderAmount()
     
     private let divisionLine: UIView = {
         let divisionLine = UIView()
@@ -68,6 +69,7 @@ class ProductInformation: UIScrollView {
         let deliveryInfo = ["126원", "서울 경기 새벽 배송, 전국 택배 배송", "2,500원 (40,000원 이상 구매 시 무료)"]
         detailFoodInfo.configureOfFoodInfoUIComponents(foodInfo: foodInfo)
         deliveryInformation.configureOfUIComponents(info: deliveryInfo)
+        orderAmount.setOrderAmount(by: "12,640원")
     }
 }
 
@@ -143,8 +145,8 @@ extension ProductInformation {
         orderCount.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             orderCount.topAnchor.constraint(equalTo: divisionLine2.bottomAnchor, constant: 24),
-            orderCount.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor, constant: 16),
-            orderCount.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor, constant: -16),
+            orderCount.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
+            orderCount.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
             orderCount.heightAnchor.constraint(equalToConstant: 28)
         ])
         
@@ -155,6 +157,15 @@ extension ProductInformation {
             divisionLine3.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
             divisionLine3.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
             divisionLine3.heightAnchor.constraint(equalToConstant: 1)
+        ])
+        
+        contentView.addSubview(orderAmount)
+        orderAmount.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            orderAmount.topAnchor.constraint(equalTo: divisionLine3.bottomAnchor, constant: 24),
+            orderAmount.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
+            orderAmount.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
+            orderAmount.heightAnchor.constraint(equalToConstant: 122)
         ])
     }
 }
