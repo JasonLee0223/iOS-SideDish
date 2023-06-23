@@ -23,9 +23,17 @@ class ProductInformation: UIScrollView {
         setUp()
     }
     
+    /// Custom SubClass View
+    
+    private let contentView: UIView = {
+        let contentView = UIView()
+        return contentView
+    }()
+    
     private let foodThumbScroll = FoodThumbImages()
     private let detailFoodInfo = DetailFoodInfo()
     private let deliveryInformation = DeliveryInformation()
+    private let orderCount = OrderCount()
     
     private let divisionLine: UIView = {
         let divisionLine = UIView()
@@ -38,6 +46,12 @@ class ProductInformation: UIScrollView {
         divisionLine2.backgroundColor = .systemGray4
         return divisionLine2
     }()
+    
+    /// [Private] Method
+    private func configureOfScroll() {
+        self.isScrollEnabled = true
+        self.showsVerticalScrollIndicator = false
+    }
     
     private func setUp() {
         let foodInfo = ["오리 주물럭_반조리", "감칠맛 나는 매콤한 양념", "12,640", "15,800", "런칭특가"]
