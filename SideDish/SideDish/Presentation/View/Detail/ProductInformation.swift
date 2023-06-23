@@ -19,11 +19,13 @@ class ProductInformation: UIScrollView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+        configureOfLayout()
+        setUp()
     }
     
     private let foodThumbScroll = FoodThumbImages()
     private let detailFoodInfo = DetailFoodInfo()
+    private let deliveryInformation = DeliveryInformation()
     
     private let divisionLine: UIView = {
         let divisionLine = UIView()
@@ -33,7 +35,9 @@ class ProductInformation: UIScrollView {
     
     private func setUp() {
         let foodInfo = ["오리 주물럭_반조리", "감칠맛 나는 매콤한 양념", "12,640", "15,800", "런칭특가"]
+        let deliveryInfo = ["126원", "서울 경기 새벽 배송, 전국 택배 배송", "2,500원 (40,000원 이상 구매 시 무료)"]
         detailFoodInfo.configureOfFoodInfoUIComponents(foodInfo: foodInfo)
+        deliveryInformation.configureOfUIComponents(info: deliveryInfo)
     }
 }
 
@@ -65,6 +69,15 @@ extension ProductInformation {
             divisionLine.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
             divisionLine.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
             divisionLine.heightAnchor.constraint(equalToConstant: 1)
+        ])
+        
+        self.addSubview(deliveryInformation)
+        deliveryInformation.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            deliveryInformation.topAnchor.constraint(equalTo: divisionLine.bottomAnchor, constant: 24),
+            deliveryInformation.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
+            deliveryInformation.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
+            deliveryInformation.heightAnchor.constraint(equalToConstant: 104)
         ])
     }
 }
