@@ -40,6 +40,8 @@ class ProductInformation: UIScrollView {
     private let orderCount = OrderCount()
     private let orderAmount = OrderAmount()
     
+    private let cookingImages = CookingImages()
+    
     private let divisionLine: UIView = {
         let divisionLine = UIView()
         divisionLine.backgroundColor = .systemGray4
@@ -70,6 +72,7 @@ class ProductInformation: UIScrollView {
         detailFoodInfo.configureOfFoodInfoUIComponents(foodInfo: foodInfo)
         deliveryInformation.configureOfUIComponents(info: deliveryInfo)
         orderAmount.setOrderAmount(by: "12,640원")
+        cookingImages.addCooking(by: cookingImages.mockImageName)
     }
 }
 
@@ -92,7 +95,7 @@ extension ProductInformation {
             contentView.bottomAnchor.constraint(equalTo: contentArea.bottomAnchor),
             
             contentView.widthAnchor.constraint(equalTo: frameArea.widthAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 977)
+            contentView.heightAnchor.constraint(equalToConstant: 2795)
         ])
         
         contentView.addSubview(foodThumbScroll)
@@ -166,6 +169,15 @@ extension ProductInformation {
             orderAmount.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
             orderAmount.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
             orderAmount.heightAnchor.constraint(equalToConstant: 122)
+        ])
+        
+        contentView.addSubview(cookingImages)
+        cookingImages.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            cookingImages.topAnchor.constraint(equalTo: orderAmount.bottomAnchor, constant: 48),
+            cookingImages.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
+            cookingImages.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
+            cookingImages.heightAnchor.constraint(equalToConstant: 1818)
         ])
     }
 }
