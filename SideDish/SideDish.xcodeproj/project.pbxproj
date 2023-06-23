@@ -45,6 +45,7 @@
 		5BD4130F2A442FC80017D97D /* DetailFoodInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD4130E2A442FC80017D97D /* DetailFoodInfo.swift */; };
 		5BD413112A4430B80017D97D /* ProductInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD413102A4430B80017D97D /* ProductInformation.swift */; };
 		5BD413132A4516D30017D97D /* DeliveryInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD413122A4516D30017D97D /* DeliveryInformation.swift */; };
+		5BD413152A451D370017D97D /* OrderCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD413142A451D370017D97D /* OrderCount.swift */; };
 		5BDBB0FF2A3DE51500D03F23 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDBB0FE2A3DE51500D03F23 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		5BD4130E2A442FC80017D97D /* DetailFoodInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodInfo.swift; sourceTree = "<group>"; };
 		5BD413102A4430B80017D97D /* ProductInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductInformation.swift; sourceTree = "<group>"; };
 		5BD413122A4516D30017D97D /* DeliveryInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInformation.swift; sourceTree = "<group>"; };
+		5BD413142A451D370017D97D /* OrderCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCount.swift; sourceTree = "<group>"; };
 		5BDBB0FE2A3DE51500D03F23 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -426,6 +428,7 @@
 				5BD4130A2A4416F20017D97D /* FoodThumbImages.swift */,
 				5BD4130E2A442FC80017D97D /* DetailFoodInfo.swift */,
 				5BD413122A4516D30017D97D /* DeliveryInformation.swift */,
+				5BD413142A451D370017D97D /* OrderCount.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				5B7806642A12491100809012 /* Reusable.swift in Sources */,
 				5B6CD75D2A37752F0066A672 /* HomeLayout.swift in Sources */,
 				5B06979C29FCE36600AE8F90 /* Respondable.swift in Sources */,
+				5BD413152A451D370017D97D /* OrderCount.swift in Sources */,
 				5B10170229F38F3F00AE55F3 /* AppDelegate.swift in Sources */,
 				5B0697AC29FCF19100AE8F90 /* FoodInformationResponseDTO.swift in Sources */,
 				5BD4130F2A442FC80017D97D /* DetailFoodInfo.swift in Sources */,
