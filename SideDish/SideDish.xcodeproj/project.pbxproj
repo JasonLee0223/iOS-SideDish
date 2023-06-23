@@ -47,6 +47,7 @@
 		5BD413132A4516D30017D97D /* DeliveryInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD413122A4516D30017D97D /* DeliveryInformation.swift */; };
 		5BD413152A451D370017D97D /* OrderCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD413142A451D370017D97D /* OrderCount.swift */; };
 		5BD4131B2A4576FB0017D97D /* OrderAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD4131A2A4576FB0017D97D /* OrderAmount.swift */; };
+		5BD4131F2A457D880017D97D /* CookingImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD4131E2A457D880017D97D /* CookingImages.swift */; };
 		5BDBB0FF2A3DE51500D03F23 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDBB0FE2A3DE51500D03F23 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		5BD413122A4516D30017D97D /* DeliveryInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInformation.swift; sourceTree = "<group>"; };
 		5BD413142A451D370017D97D /* OrderCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCount.swift; sourceTree = "<group>"; };
 		5BD4131A2A4576FB0017D97D /* OrderAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAmount.swift; sourceTree = "<group>"; };
+		5BD4131E2A457D880017D97D /* CookingImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingImages.swift; sourceTree = "<group>"; };
 		5BDBB0FE2A3DE51500D03F23 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -432,6 +434,7 @@
 				5BD413122A4516D30017D97D /* DeliveryInformation.swift */,
 				5BD413142A451D370017D97D /* OrderCount.swift */,
 				5BD4131A2A4576FB0017D97D /* OrderAmount.swift */,
+				5BD4131E2A457D880017D97D /* CookingImages.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				5B0697A629FCEFDF00AE8F90 /* APIEndpoint.swift in Sources */,
 				5B0697BC29FD015600AE8F90 /* NetworkService.swift in Sources */,
 				5B10171F29F3B3D300AE55F3 /* BargainPriceTypeList.swift in Sources */,
+				5BD4131F2A457D880017D97D /* CookingImages.swift in Sources */,
 				5B10171D29F39B9500AE55F3 /* FoodInformation.swift in Sources */,
 				5B06979E29FCE41F00AE8F90 /* Requestable.swift in Sources */,
 				5B0697B829FCFB9200AE8F90 /* APIMagicLiteral.swift in Sources */,
