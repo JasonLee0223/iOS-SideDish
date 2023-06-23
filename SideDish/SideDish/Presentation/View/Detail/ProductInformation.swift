@@ -9,10 +9,10 @@ import UIKit
 
 //MARK: - Top Class
 class ProductInformation: UIScrollView {
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .systemGray
+        backgroundColor = .white
         configureOfLayout()
         setUp()
     }
@@ -31,6 +31,12 @@ class ProductInformation: UIScrollView {
         let divisionLine = UIView()
         divisionLine.backgroundColor = .systemGray4
         return divisionLine
+    }()
+    
+    private let divisionLine2: UIView = {
+        let divisionLine2 = UIView()
+        divisionLine2.backgroundColor = .systemGray4
+        return divisionLine2
     }()
     
     private func setUp() {
@@ -65,7 +71,7 @@ extension ProductInformation {
         self.addSubview(divisionLine)
         divisionLine.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            divisionLine.topAnchor.constraint(equalTo: detailFoodInfo.bottomAnchor, constant: 28),
+            divisionLine.topAnchor.constraint(equalTo: detailFoodInfo.bottomAnchor, constant: 24),
             divisionLine.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
             divisionLine.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
             divisionLine.heightAnchor.constraint(equalToConstant: 1)
@@ -78,6 +84,15 @@ extension ProductInformation {
             deliveryInformation.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
             deliveryInformation.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
             deliveryInformation.heightAnchor.constraint(equalToConstant: 104)
+        ])
+        
+        self.addSubview(divisionLine2)
+        divisionLine2.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            divisionLine2.topAnchor.constraint(equalTo: deliveryInformation.bottomAnchor, constant: 24),
+            divisionLine2.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
+            divisionLine2.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
+            divisionLine2.heightAnchor.constraint(equalToConstant: 1)
         ])
     }
 }
