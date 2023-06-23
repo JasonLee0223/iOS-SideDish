@@ -15,6 +15,7 @@ class ProductInformation: UIScrollView {
         backgroundColor = .white
         
         configureOfScroll()
+        addSubViewInProductInformation()
         configureOfLayout()
         setUp()
     }
@@ -23,6 +24,7 @@ class ProductInformation: UIScrollView {
         super.init(coder: coder)
         
         configureOfScroll()
+        addSubViewInProductInformation()
         configureOfLayout()
         setUp()
     }
@@ -80,13 +82,35 @@ class ProductInformation: UIScrollView {
 
 extension ProductInformation {
     
+    private func createSeparateLine(by stackView: UIStackView, view: UIView) {
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 24),
+            view.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
+            view.heightAnchor.constraint(equalToConstant: 1)
+        ])
+    }
+    
+    private func addSubViewInProductInformation() {
+        self.addSubview(contentView)
+        contentView.addSubview(foodThumbScroll)
+        
+        [detailFoodInfo, deliveryInformation,
+         orderCount, orderAmount, cookingImages].forEach { customStackView in
+            contentView.addSubview(customStackView)
+        }
+        
+        [divisionLine, divisionLine2, divisionLine3].forEach { customView in
+            contentView.addSubview(customView)
+        }
+    }
+    
     private func configureOfLayout() {
         
         let safeArea = self.safeAreaLayoutGuide
         let contentArea = self.contentLayoutGuide
         let frameArea = self.frameLayoutGuide
         
-        self.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: contentArea.topAnchor),
@@ -98,7 +122,6 @@ extension ProductInformation {
             contentView.heightAnchor.constraint(equalToConstant: 2795)
         ])
         
-        contentView.addSubview(foodThumbScroll)
         foodThumbScroll.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             foodThumbScroll.topAnchor.constraint(equalTo: contentArea.topAnchor),
@@ -108,7 +131,6 @@ extension ProductInformation {
             foodThumbScroll.heightAnchor.constraint(equalToConstant: 376),
         ])
         
-        contentView.addSubview(detailFoodInfo)
         detailFoodInfo.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             detailFoodInfo.topAnchor.constraint(equalTo: foodThumbScroll.bottomAnchor),
@@ -117,16 +139,9 @@ extension ProductInformation {
             detailFoodInfo.heightAnchor.constraint(equalToConstant: 152)
         ])
         
-        contentView.addSubview(divisionLine)
         divisionLine.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            divisionLine.topAnchor.constraint(equalTo: detailFoodInfo.bottomAnchor, constant: 24),
-            divisionLine.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
-            divisionLine.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
-            divisionLine.heightAnchor.constraint(equalToConstant: 1)
-        ])
+        createSeparateLine(by: detailFoodInfo, view: divisionLine)
         
-        contentView.addSubview(deliveryInformation)
         deliveryInformation.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             deliveryInformation.topAnchor.constraint(equalTo: divisionLine.bottomAnchor, constant: 24),
@@ -135,16 +150,9 @@ extension ProductInformation {
             deliveryInformation.heightAnchor.constraint(equalToConstant: 104)
         ])
         
-        contentView.addSubview(divisionLine2)
         divisionLine2.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            divisionLine2.topAnchor.constraint(equalTo: deliveryInformation.bottomAnchor, constant: 24),
-            divisionLine2.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
-            divisionLine2.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
-            divisionLine2.heightAnchor.constraint(equalToConstant: 1)
-        ])
+        createSeparateLine(by: deliveryInformation, view: divisionLine2)
         
-        contentView.addSubview(orderCount)
         orderCount.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             orderCount.topAnchor.constraint(equalTo: divisionLine2.bottomAnchor, constant: 24),
@@ -153,16 +161,9 @@ extension ProductInformation {
             orderCount.heightAnchor.constraint(equalToConstant: 28)
         ])
         
-        contentView.addSubview(divisionLine3)
         divisionLine3.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            divisionLine3.topAnchor.constraint(equalTo: orderCount.bottomAnchor, constant: 24),
-            divisionLine3.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
-            divisionLine3.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
-            divisionLine3.heightAnchor.constraint(equalToConstant: 1)
-        ])
+        createSeparateLine(by: orderCount, view: divisionLine3)
         
-        contentView.addSubview(orderAmount)
         orderAmount.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             orderAmount.topAnchor.constraint(equalTo: divisionLine3.bottomAnchor, constant: 24),
@@ -171,7 +172,6 @@ extension ProductInformation {
             orderAmount.heightAnchor.constraint(equalToConstant: 122)
         ])
         
-        contentView.addSubview(cookingImages)
         cookingImages.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             cookingImages.topAnchor.constraint(equalTo: orderAmount.bottomAnchor, constant: 48),
@@ -181,3 +181,4 @@ extension ProductInformation {
         ])
     }
 }
+
