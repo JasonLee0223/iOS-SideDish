@@ -29,13 +29,13 @@ final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         configureHierarchy()
     }
     
     private let networkService = NetworkService()
-    
-    private let detailFoodInformation = ProductInformation(frame: .zero)
+
+    private let productInformation = ProductInformation(frame: .zero)
 }
 
 //MARK: - Configure of UI Components
@@ -52,13 +52,13 @@ extension DetailViewController {
     private func configureHierarchy() {
         let safeArea = self.view.safeAreaLayoutGuide
         
-        self.view.addSubview(detailFoodInformation)
-        detailFoodInformation.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(productInformation)
+        productInformation.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            detailFoodInformation.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            detailFoodInformation.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-            detailFoodInformation.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
-            detailFoodInformation.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            productInformation.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            productInformation.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            productInformation.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            productInformation.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
         ])
     }
 }
