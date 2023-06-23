@@ -51,6 +51,12 @@ class ProductInformation: UIScrollView {
         return divisionLine2
     }()
     
+    private let divisionLine3: UIView = {
+        let divisionLine3 = UIView()
+        divisionLine3.backgroundColor = .systemGray4
+        return divisionLine3
+    }()
+    
     /// [Private] Method
     private func configureOfScroll() {
         self.isScrollEnabled = true
@@ -142,5 +148,13 @@ extension ProductInformation {
             orderCount.heightAnchor.constraint(equalToConstant: 28)
         ])
         
+        contentView.addSubview(divisionLine3)
+        divisionLine3.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            divisionLine3.topAnchor.constraint(equalTo: orderCount.bottomAnchor, constant: 24),
+            divisionLine3.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
+            divisionLine3.trailingAnchor.constraint(equalTo: detailFoodInfo.trailingAnchor),
+            divisionLine3.heightAnchor.constraint(equalToConstant: 1)
+        ])
     }
 }
