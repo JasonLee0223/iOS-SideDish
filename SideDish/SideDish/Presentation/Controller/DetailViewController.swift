@@ -22,6 +22,8 @@ final class DetailViewController: UIViewController {
                     with: APIEndpoint.supplyDetailFoodInformation(
                         with: APIMagicLiteral.detail, and: unwrappingFoodCode)
                 ).data
+                //TODO: - 음식 제목 및 badge 필요
+                
                 print(networkResult)
             }
         }
