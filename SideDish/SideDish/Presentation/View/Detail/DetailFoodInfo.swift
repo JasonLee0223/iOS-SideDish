@@ -82,32 +82,26 @@ extension DetailFoodInfo {
     }
 }
 
+//MARK: - [Public Method] Configure of UI Components
 extension DetailFoodInfo {
-    func configureOfFoodInfoUIComponents(foodInfo: [String]) {
-        setFoodTitle(by: foodInfo[0])
-        setFoodDescription(by: foodInfo[1])
-        setSalePrice(by: foodInfo[2])
-        setPrimePrice(by: foodInfo[3])
-        setMockBadge(by: foodInfo[4])
-    }
     
-    private func setFoodTitle(by name: String) {
+    func setFoodTitle(by name: String) {
         foodTitle.text = name
     }
     
-    private func setFoodDescription(by text: String) {
+    func setFoodDescription(by text: String) {
         foodDescription.text = text
     }
     
-    private func setSalePrice(by text: String) {
+    func setSalePrice(by text: String) {
         salePrice.text = text
     }
     
-    private func setPrimePrice(by text: String) {
+    func setPrimePrice(by text: String) {
         primePrice.text = text
     }
     
-    private func setMockBadge(by text: String) {
+    func setMockBadge(by text: String) {
         mockBadge.text = text
     }
     
