@@ -17,7 +17,6 @@ class ProductInformation: UIScrollView {
         configureOfScroll()
         addSubViewInProductInformation()
         configureOfLayout()
-        setUp()
     }
     
     required init?(coder: NSCoder) {
@@ -26,7 +25,6 @@ class ProductInformation: UIScrollView {
         configureOfScroll()
         addSubViewInProductInformation()
         configureOfLayout()
-        setUp()
     }
     
     /// Custom SubClass View
@@ -77,12 +75,16 @@ class ProductInformation: UIScrollView {
         detailFoodInfo.configureOfFoodInfoUIComponents(foodInfo: data)
     }
     
-    private func setUp() {
-        let deliveryInfo = ["126원", "서울 경기 새벽 배송, 전국 택배 배송", "2,500원 (40,000원 이상 구매 시 무료)"]
-        
-        deliveryInformation.configureOfUIComponents(info: deliveryInfo)
-        orderAmount.setOrderAmount(by: "12,640원")
-        cookingImages.addCooking(by: cookingImages.mockImageName)
+    func setDeliveryInfo(by data: [String]) {
+        deliveryInformation.configureOfUIComponents(info: data)
+    }
+    
+    func setOrder(by price: String) {
+        orderAmount.setOrderAmount(by: price)
+    }
+    
+    func setCookingImage(by data: [String]) {
+        cookingImages.addCooking(by: data)
     }
 }
 
