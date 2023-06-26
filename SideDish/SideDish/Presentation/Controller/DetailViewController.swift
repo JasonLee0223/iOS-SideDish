@@ -10,6 +10,8 @@ import UIKit
 final class DetailViewController: UIViewController {
     
     var detailFoodCode: String?
+    var badges: [String]?
+    var foodTitle: String?
     
     override func viewWillAppear(_ animated: Bool) {
         if animated {
@@ -22,16 +24,14 @@ final class DetailViewController: UIViewController {
                     with: APIEndpoint.supplyDetailFoodInformation(
                         with: APIMagicLiteral.detail, and: unwrappingFoodCode)
                 ).data
-                //TODO: - 음식 제목 및 badge 필요
-                
-                print(networkResult)
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        configuerOfUI()
         configureHierarchy()
     }
     
@@ -44,7 +44,8 @@ final class DetailViewController: UIViewController {
 extension DetailViewController {
     
     private func configuerOfUI() {
-        
+        view.backgroundColor = .systemBackground
+        navigationItem.title = foodTitle
     }
 }
 
