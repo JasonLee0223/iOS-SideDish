@@ -65,14 +65,18 @@ class ProductInformation: UIScrollView {
         foodThumbScroll.imagePaths = datas
     }
     
-    /// [Private] Method
-    private func configureOfScroll() {
-        self.isScrollEnabled = true
-        self.showsVerticalScrollIndicator = false
+    func setFood(title: String, description: String) {
+        detailFoodInfo.setFoodTitle(by: title)
+        detailFoodInfo.setFoodDescription(by: description)
     }
     
-    func setDetailFoodInfo(by data: [String]) {
-        detailFoodInfo.configureOfFoodInfoUIComponents(foodInfo: data)
+    func setFood(price: String, salePrice: String) {
+        detailFoodInfo.setSalePrice(by: price)
+        detailFoodInfo.setPrimePrice(by: salePrice)
+    }
+    
+    func setFood(by badge: [String]) {
+        detailFoodInfo.setMockBadge(by: badge[0])
     }
     
     func setDeliveryInfo(by data: [String]) {
@@ -85,6 +89,12 @@ class ProductInformation: UIScrollView {
     
     func setCookingImage(by data: [String]) {
         cookingImages.addCooking(by: data)
+    }
+    
+    /// [Private] Method
+    private func configureOfScroll() {
+        self.isScrollEnabled = true
+        self.showsVerticalScrollIndicator = false
     }
 }
 

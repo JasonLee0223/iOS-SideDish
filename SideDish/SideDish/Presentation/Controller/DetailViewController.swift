@@ -20,10 +20,7 @@ final class DetailViewController: UIViewController {
             }
             
             Task {
-                var foodInfo = [String]()
-                var deliveryInfo = [String]()
-                
-                let networkResult = try await networkService.request(
+                let networkResult = try await self.networkService.request(
                     with: APIEndpoint.supplyDetailFoodInformation(
                         with: APIMagicLiteral.detail, and: unwrappingFoodCode)
                 ).data
@@ -31,24 +28,21 @@ final class DetailViewController: UIViewController {
                 productInformation.convey(by: networkResult.thumbImages)
                 
                 if let title = foodTitle, let badges = badges {
-                    foodInfo.append(title)
+                    productInformation.setFood(
+                        title: title, description: networkResult.productDescription
+                    )
                     
-                    foodInfo.append(networkResult.productDescription)
-                    networkResult.prices.forEach { price in
-                        foodInfo.append(price)
-                    }
-                    
-                    badges.forEach { badge in
-                        foodInfo.append(badge)
-                    }
+                    productInformation.setFood(by: badges)
                 }
-                productInformation.setDetailFoodInfo(by: foodInfo)
                 
+                if let price = networkResult.prices.first,
+                   let salePrice = networkResult.prices.last {
+                    productInformation.setFood(price: price, salePrice: salePrice)
+                }
                 
-                deliveryInfo.append(networkResult.point)
-                deliveryInfo.append(networkResult.deliveryInfo)
-                deliveryInfo.append(networkResult.deliveryFee)
-                productInformation.setDeliveryInfo(by: deliveryInfo)
+                productInformation.setDeliveryInfo(
+                    by: [networkResult.point, networkResult.deliveryInfo, networkResult.deliveryFee]
+                )
                 
                 if let salePrice = networkResult.prices.last {
                     productInformation.setOrder(by: salePrice)
