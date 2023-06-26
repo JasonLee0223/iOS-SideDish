@@ -18,19 +18,28 @@ class CookingImages: UIStackView {
         super.init(coder: coder)
         configureOfCookingImages()
     }
-    
-    let mockImageName = [ "folder.fill", "person.fill", "star.fill"]
 }
 
 extension CookingImages {
     
     func addCooking(by images: [String]) {
-        //TODO: - images 데이터로 변경
         
-        mockImageName.forEach { imageName in
+        images.forEach { imagePath in
+            
+            guard let imageURL = URL(string: imagePath) else {
+                return
+            }
+            
+            guard let imageData = try? Data(contentsOf: imageURL) else {
+                return
+            }
+            
+            guard let image = UIImage(data: imageData) else {
+                 return
+            }
             
             let cookingImage = UIImageView()
-            cookingImage.image = UIImage(systemName: imageName)
+            cookingImage.image = image
             cookingImage.contentMode = .scaleToFill
             cookingImage.frame = CGRect(
                 origin: self.frame.origin, size: self.frame.size
