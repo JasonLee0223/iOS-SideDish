@@ -101,8 +101,10 @@ extension FoodThumbImages {
     private func configureOfScrollView() {
         
         self.frame = UIScreen.main.bounds
-        self.contentSize = CGSize(width: UIScreen.main.bounds.width * CGFloat(imagePaths.count),
-                                  height: UIScreen.main.bounds.height)
+        self.contentSize = CGSize(
+            width: UIScreen.main.bounds.width * CGFloat(imagePaths.count),
+            height: UIScreen.main.bounds.height
+        )
         self.delegate = self // scroll범위에 따라 pageControl의 값을 바꾸어주기 위한 delegate
         self.alwaysBounceVertical = false
         self.showsHorizontalScrollIndicator = false
