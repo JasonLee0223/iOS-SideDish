@@ -128,6 +128,9 @@ extension HomeViewController: UICollectionViewDelegate {
         
         let detailViewController = DetailViewController()
         detailViewController.detailFoodCode = selectedFood.foodCode
+        detailViewController.badges = selectedFood.badge
+        detailViewController.foodTitle = selectedFood.foodInformation.foodName
+        
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
