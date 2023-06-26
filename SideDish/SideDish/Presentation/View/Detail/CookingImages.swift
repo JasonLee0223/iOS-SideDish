@@ -40,7 +40,7 @@ extension CookingImages {
             
             let cookingImage = UIImageView()
             cookingImage.image = image
-            cookingImage.contentMode = .scaleToFill
+            cookingImage.contentMode = .scaleAspectFit
             cookingImage.frame = CGRect(
                 origin: self.frame.origin, size: self.frame.size
             )
