@@ -17,7 +17,8 @@ class DetailFoodInfo: UIStackView {
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
-        
+        configureOfStackView()
+        configureOfLayout()
     }
     
     private let costGroup: UIStackView = {
