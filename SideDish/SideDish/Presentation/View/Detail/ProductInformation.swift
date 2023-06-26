@@ -91,23 +91,28 @@ extension ProductInformation {
         ])
     }
     
+    private func arrangeOfLayout(by stackView: UIStackView, with separateLine: UIView) {
+        //TODO: - Layout 중복되는 보일러플레이트 코드 줄이기
+    }
+    
     private func addSubViewInProductInformation() {
         self.addSubview(contentView)
         contentView.addSubview(foodThumbScroll)
         
         [detailFoodInfo, deliveryInformation,
          orderCount, orderAmount, cookingImages].forEach { customStackView in
+            customStackView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(customStackView)
         }
         
         [divisionLine, divisionLine2, divisionLine3].forEach { customView in
+            customView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(customView)
         }
     }
     
     private func configureOfLayout() {
         
-        let safeArea = self.safeAreaLayoutGuide
         let contentArea = self.contentLayoutGuide
         let frameArea = self.frameLayoutGuide
         
@@ -131,18 +136,15 @@ extension ProductInformation {
             foodThumbScroll.heightAnchor.constraint(equalToConstant: 376),
         ])
         
-        detailFoodInfo.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             detailFoodInfo.topAnchor.constraint(equalTo: foodThumbScroll.bottomAnchor),
-            detailFoodInfo.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16),
-            detailFoodInfo.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16),
+            detailFoodInfo.leadingAnchor.constraint(equalTo: contentArea.leadingAnchor, constant: 16),
+            detailFoodInfo.trailingAnchor.constraint(equalTo: contentArea.trailingAnchor, constant: -16),
             detailFoodInfo.heightAnchor.constraint(equalToConstant: 152)
         ])
         
-        divisionLine.translatesAutoresizingMaskIntoConstraints = false
         createSeparateLine(by: detailFoodInfo, view: divisionLine)
         
-        deliveryInformation.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             deliveryInformation.topAnchor.constraint(equalTo: divisionLine.bottomAnchor, constant: 24),
             deliveryInformation.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
@@ -150,10 +152,8 @@ extension ProductInformation {
             deliveryInformation.heightAnchor.constraint(equalToConstant: 104)
         ])
         
-        divisionLine2.translatesAutoresizingMaskIntoConstraints = false
         createSeparateLine(by: deliveryInformation, view: divisionLine2)
         
-        orderCount.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             orderCount.topAnchor.constraint(equalTo: divisionLine2.bottomAnchor, constant: 24),
             orderCount.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
@@ -161,10 +161,8 @@ extension ProductInformation {
             orderCount.heightAnchor.constraint(equalToConstant: 28)
         ])
         
-        divisionLine3.translatesAutoresizingMaskIntoConstraints = false
         createSeparateLine(by: orderCount, view: divisionLine3)
         
-        orderAmount.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             orderAmount.topAnchor.constraint(equalTo: divisionLine3.bottomAnchor, constant: 24),
             orderAmount.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
@@ -172,7 +170,6 @@ extension ProductInformation {
             orderAmount.heightAnchor.constraint(equalToConstant: 122)
         ])
         
-        cookingImages.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             cookingImages.topAnchor.constraint(equalTo: orderAmount.bottomAnchor, constant: 48),
             cookingImages.leadingAnchor.constraint(equalTo: detailFoodInfo.leadingAnchor),
@@ -181,4 +178,3 @@ extension ProductInformation {
         ])
     }
 }
-
