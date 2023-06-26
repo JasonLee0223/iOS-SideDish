@@ -20,6 +20,8 @@ final class DetailViewController: UIViewController {
             }
             
             Task {
+                var foodInfo = [String]()
+                
                 let networkResult = try await networkService.request(
                     with: APIEndpoint.supplyDetailFoodInformation(
                         with: APIMagicLiteral.detail, and: unwrappingFoodCode)
@@ -27,6 +29,20 @@ final class DetailViewController: UIViewController {
                 
                 productInformation.convey(by: networkResult.thumbImages)
                 
+                if let title = foodTitle, let badges = badges {
+                    foodInfo.append(title)
+                    
+                    foodInfo.append(networkResult.productDescription)
+                    networkResult.prices.forEach { price in
+                        foodInfo.append(price)
+                    }
+                    
+                    badges.forEach { badge in
+                        foodInfo.append(badge)
+                    }
+                }
+                
+                productInformation.setDetailFoodInfo(by: foodInfo)
             }
             
         }
