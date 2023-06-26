@@ -73,10 +73,13 @@ class ProductInformation: UIScrollView {
         self.showsVerticalScrollIndicator = false
     }
     
+    func setDetailFoodInfo(by data: [String]) {
+        detailFoodInfo.configureOfFoodInfoUIComponents(foodInfo: data)
+    }
+    
     private func setUp() {
-        let foodInfo = ["오리 주물럭_반조리", "감칠맛 나는 매콤한 양념", "12,640", "15,800", "런칭특가"]
         let deliveryInfo = ["126원", "서울 경기 새벽 배송, 전국 택배 배송", "2,500원 (40,000원 이상 구매 시 무료)"]
-        detailFoodInfo.configureOfFoodInfoUIComponents(foodInfo: foodInfo)
+        
         deliveryInformation.configureOfUIComponents(info: deliveryInfo)
         orderAmount.setOrderAmount(by: "12,640원")
         cookingImages.addCooking(by: cookingImages.mockImageName)
