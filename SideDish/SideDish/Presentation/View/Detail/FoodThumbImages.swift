@@ -11,21 +11,22 @@ class FoodThumbImages: UIScrollView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .orange
+        
         configureOfLayout()
-        setUp()
-        addContentScrollView()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
         configureOfLayout()
-        setUp()
-        addContentScrollView()
     }
     
-    let mockImageName = [ "star.fill", "heart.fill", "star.fill"]
+    var imagePaths = [String]() {
+        didSet {
+            setUp()
+            addContentScrollView()
+        }
+    }
     
     private let pageControl: UIPageControl = {
         let pageControl = UIPageControl()
@@ -63,30 +64,29 @@ extension FoodThumbImages {
     
     private func setUp() {
         configureOfScrollView()
-        pageControl.numberOfPages = self.mockImageName.count
-    }
-    
-    private func configureOfScrollView() {
-        
-        self.frame = UIScreen.main.bounds
-        self.contentSize = CGSize(width: UIScreen.main.bounds.width * CGFloat(mockImageName.count),
-                                  height: UIScreen.main.bounds.height)
-        self.delegate = self // scroll범위에 따라 pageControl의 값을 바꾸어주기 위한 delegate
-        self.alwaysBounceVertical = false
-        self.showsHorizontalScrollIndicator = false
-        self.showsVerticalScrollIndicator = false
-        self.isScrollEnabled = true
-        self.isPagingEnabled = true
-        self.bounces = false // 경계지점에서 bounce될건지 체크 (첫 or 마지막 페이지에서 바운스 스크롤 효과 여부)
-        self.contentSize = CGSize(width: self.frame.width * CGFloat(mockImageName.count),
-                                  height: 375)
+        pageControl.numberOfPages = self.imagePaths.count
     }
     
     private func addContentScrollView() {
-        for (index, imageName) in mockImageName.enumerated() {
+        for (index, imageName) in imagePaths.enumerated() {
+            
+            guard let imageURL = URL(string: imageName) else {
+                print(ErrorOfHomeViewModel.FailOfMakeURL)
+                return
+            }
+            
+            guard let foodImageData = try? Data(contentsOf: imageURL) else {
+                print(ErrorOfHomeViewModel.EmptyOfImageData)
+                return
+            }
+            
+            guard let foodImage = UIImage(data: foodImageData) else {
+                print(ErrorOfHomeViewModel.EmptyOfImageData)
+                return
+            }
             
             let thumbImage = UIImageView()
-            thumbImage.image = UIImage(systemName: imageName)
+            thumbImage.image = foodImage
             thumbImage.contentMode = .scaleToFill
             thumbImage.frame = CGRect(
                 origin: self.frame.origin,
@@ -97,6 +97,23 @@ extension FoodThumbImages {
             self.addSubview(thumbImage)
         }
    }
+    
+    private func configureOfScrollView() {
+        
+        self.frame = UIScreen.main.bounds
+        self.contentSize = CGSize(width: UIScreen.main.bounds.width * CGFloat(imagePaths.count),
+                                  height: UIScreen.main.bounds.height)
+        self.delegate = self // scroll범위에 따라 pageControl의 값을 바꾸어주기 위한 delegate
+        self.alwaysBounceVertical = false
+        self.showsHorizontalScrollIndicator = false
+        self.showsVerticalScrollIndicator = false
+        self.isScrollEnabled = true
+        self.isPagingEnabled = true
+        self.bounces = false // 경계지점에서 bounce될건지 체크 (첫 or 마지막 페이지에서 바운스 스크롤 효과 여부)
+        self.contentSize = CGSize(
+            width: self.frame.width * CGFloat(imagePaths.count), height: 375
+        )
+    }
 }
 
 extension FoodThumbImages: UIScrollViewDelegate {
