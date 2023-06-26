@@ -24,7 +24,11 @@ final class DetailViewController: UIViewController {
                     with: APIEndpoint.supplyDetailFoodInformation(
                         with: APIMagicLiteral.detail, and: unwrappingFoodCode)
                 ).data
+                
+                productInformation.convey(by: networkResult.thumbImages)
+                
             }
+            
         }
     }
 

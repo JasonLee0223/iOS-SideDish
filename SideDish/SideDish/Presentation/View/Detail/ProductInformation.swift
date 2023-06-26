@@ -62,6 +62,11 @@ class ProductInformation: UIScrollView {
         return divisionLine3
     }()
     
+    /// [Public] Method
+    func convey(by datas: [String]) {
+        foodThumbScroll.imagePaths = datas
+    }
+    
     /// [Private] Method
     private func configureOfScroll() {
         self.isScrollEnabled = true
