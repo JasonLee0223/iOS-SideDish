@@ -27,11 +27,13 @@ final class DetailViewController: UIViewController {
                 
                 productInformation.convey(by: networkResult.thumbImages)
                 
-                if let title = foodTitle, let badges = badges {
+                if let title = foodTitle {
                     productInformation.setFood(
                         title: title, description: networkResult.productDescription
                     )
-                    
+                }
+                
+                if let badges = badges {
                     productInformation.setFood(by: badges)
                 }
                 
@@ -40,13 +42,13 @@ final class DetailViewController: UIViewController {
                     productInformation.setFood(price: price, salePrice: salePrice)
                 }
                 
-                productInformation.setDeliveryInfo(
-                    by: [networkResult.point, networkResult.deliveryInfo, networkResult.deliveryFee]
-                )
-                
                 if let salePrice = networkResult.prices.last {
                     productInformation.setOrder(by: salePrice)
                 }
+                
+                productInformation.setDeliveryInfo(
+                    by: [networkResult.point, networkResult.deliveryInfo, networkResult.deliveryFee]
+                )
                 
                 productInformation.setCookingImage(by: networkResult.detailSection)
             }
