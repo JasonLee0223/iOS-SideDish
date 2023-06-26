@@ -21,6 +21,7 @@ final class DetailViewController: UIViewController {
             
             Task {
                 var foodInfo = [String]()
+                var deliveryInfo = [String]()
                 
                 let networkResult = try await networkService.request(
                     with: APIEndpoint.supplyDetailFoodInformation(
@@ -41,8 +42,19 @@ final class DetailViewController: UIViewController {
                         foodInfo.append(badge)
                     }
                 }
-                
                 productInformation.setDetailFoodInfo(by: foodInfo)
+                
+                
+                deliveryInfo.append(networkResult.point)
+                deliveryInfo.append(networkResult.deliveryInfo)
+                deliveryInfo.append(networkResult.deliveryFee)
+                productInformation.setDeliveryInfo(by: deliveryInfo)
+                
+                if let salePrice = networkResult.prices.last {
+                    productInformation.setOrder(by: salePrice)
+                }
+                
+                productInformation.setCookingImage(by: networkResult.detailSection)
             }
             
         }
