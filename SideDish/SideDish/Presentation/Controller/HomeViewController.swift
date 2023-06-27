@@ -132,5 +132,6 @@ extension HomeViewController: UICollectionViewDelegate {
         detailViewController.foodTitle = selectedFood.foodInformation.foodName
         
         navigationController?.pushViewController(detailViewController, animated: true)
+        navigationController?.navigationBar.topItem?.title = "뒤로"
     }
 }
