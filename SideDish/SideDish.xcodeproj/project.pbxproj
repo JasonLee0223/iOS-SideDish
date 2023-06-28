@@ -48,6 +48,7 @@
 		5BD413152A451D370017D97D /* OrderCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD413142A451D370017D97D /* OrderCount.swift */; };
 		5BD4131B2A4576FB0017D97D /* OrderAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD4131A2A4576FB0017D97D /* OrderAmount.swift */; };
 		5BD4131F2A457D880017D97D /* CookingImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD4131E2A457D880017D97D /* CookingImages.swift */; };
+		5BD413242A4C10E40017D97D /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 5BD413232A4C10E40017D97D /* Toast */; };
 		5BDBB0FF2A3DE51500D03F23 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDBB0FE2A3DE51500D03F23 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD413242A4C10E40017D97D /* Toast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +457,9 @@
 			dependencies = (
 			);
 			name = SideDish;
+			packageProductDependencies = (
+				5BD413232A4C10E40017D97D /* Toast */,
+			);
 			productName = SideDish;
 			productReference = 5B1016FE29F38F3F00AE55F3 /* SideDish.app */;
 			productType = "com.apple.product-type.application";
@@ -483,6 +488,9 @@
 				Base,
 			);
 			mainGroup = 5B1016F529F38F3E00AE55F3;
+			packageReferences = (
+				5BD413222A4C10E40017D97D /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+			);
 			productRefGroup = 5B1016FF29F38F3F00AE55F3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -768,6 +776,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5BD413222A4C10E40017D97D /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5BD413232A4C10E40017D97D /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BD413222A4C10E40017D97D /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5B1016F629F38F3F00AE55F3 /* Project object */;
 }
