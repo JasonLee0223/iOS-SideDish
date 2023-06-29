@@ -7,7 +7,26 @@
 
 import UIKit
 
-final class FoodInformation: UIStackView {
+protocol TextStylable {
+    
+    func convertTextStyleToStrikethrough(from label: UILabel)
+}
+
+extension TextStylable {
+    
+    func convertTextStyleToStrikethrough(from label: UILabel) {
+        guard let text = label.text else { return }
+        
+        let attributeString = NSMutableAttributedString(string: text)
+        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle,
+                                     value: NSUnderlineStyle.single.rawValue,
+                                     range: NSRange(location: 0, length: attributeString.length))
+        label.textColor = .systemGray2
+        label.attributedText = attributeString
+    }
+}
+
+final class FoodInformation: UIStackView, TextStylable {
     
     //MARK: - Initializer
     
@@ -121,8 +140,8 @@ extension FoodInformation {
     
     func setCostChoose(between primeCost: String?, or discountedCost: String?) {
         
-        guard let discountedCost = discountedCost else { return }
         guard let primeCost = primeCost else { return }
+        guard let discountedCost = discountedCost else { return }
         
         if !primeCost.isEmpty && !discountedCost.isEmpty {
             setPrimeCost(by: primeCost)
@@ -168,16 +187,5 @@ extension FoodInformation {
     private func setDiscountedCost(by text: String) {
         discountedCostContent.text = text
         convertTextStyleToStrikethrough(from: discountedCostContent)
-    }
-    
-    private func convertTextStyleToStrikethrough(from label: UILabel) {
-        guard let text = label.text else { return }
-        
-        let attributeString = NSMutableAttributedString(string: text)
-        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle,
-                                     value: NSUnderlineStyle.single.rawValue,
-                                     range: NSRange(location: 0, length: attributeString.length))
-        label.textColor = .systemGray2
-        label.attributedText = attributeString
     }
 }
