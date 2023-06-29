@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailFoodInfo: UIStackView {
+class DetailFoodInfo: UIStackView, TextStylable {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,19 +44,19 @@ class DetailFoodInfo: UIStackView {
         return foodDescription
     }()
     
-    private let salePrice: UILabel = {
-        let salePrice = UILabel()
-        salePrice.font = .boldSystemFont(ofSize: 18)
-        salePrice.textColor = .black
-        salePrice.contentMode = .scaleToFill
-        return salePrice
-    }()
-    
     private let primePrice: UILabel = {
         let primePrice = UILabel()
-        primePrice.font = .systemFont(ofSize: 16)
-        primePrice.textColor = .systemGray2
+        primePrice.font = .boldSystemFont(ofSize: 18)
+        primePrice.textColor = .black
+        primePrice.contentMode = .scaleToFill
         return primePrice
+    }()
+    
+    private let salePrice: UILabel = {
+        let salePrice = UILabel()
+        salePrice.font = .systemFont(ofSize: 16)
+        salePrice.textColor = .systemGray2
+        return salePrice
     }()
     
     private let mockBadge: UILabel = {
@@ -74,8 +74,8 @@ extension DetailFoodInfo {
         self.addArrangedSubview(foodTitle)
         self.addArrangedSubview(foodDescription)
         self.addArrangedSubview(costGroup)
-        costGroup.addArrangedSubview(salePrice)
         costGroup.addArrangedSubview(primePrice)
+        costGroup.addArrangedSubview(salePrice)
         
         //TODO: - Badge 추가
         self.addArrangedSubview(mockBadge)
@@ -93,12 +93,13 @@ extension DetailFoodInfo {
         foodDescription.text = text
     }
     
-    func setSalePrice(by text: String) {
-        salePrice.text = text
-    }
-    
     func setPrimePrice(by text: String) {
         primePrice.text = text
+    }
+    
+    func setSalePrice(by text: String) {
+        salePrice.text = text
+        convertTextStyleToStrikethrough(from: salePrice)
     }
     
     func setMockBadge(by text: String) {
