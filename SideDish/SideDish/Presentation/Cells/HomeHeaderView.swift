@@ -41,14 +41,16 @@ final class HomeHeaderView: UICollectionReusableView, Reusable {
 //MARK: - Configure of Layout
 extension HomeHeaderView {
     private func configuration() {
-        let sectionInset: CGFloat = 16.0
+        let sideInset: CGFloat = 16.0
+        let upDownInset: CGFloat = 24.0
+        
         addSubview(sectionTitle)
         sectionTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            sectionTitle.topAnchor.constraint(equalTo: topAnchor, constant: sectionInset),
-            sectionTitle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -sectionInset),
-            sectionTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: sectionInset),
-            sectionTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -sectionInset)
+            sectionTitle.topAnchor.constraint(equalTo: topAnchor, constant: upDownInset),
+            sectionTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: sideInset),
+            sectionTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -sideInset),
+            sectionTitle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -upDownInset),
         ])
     }
 }
