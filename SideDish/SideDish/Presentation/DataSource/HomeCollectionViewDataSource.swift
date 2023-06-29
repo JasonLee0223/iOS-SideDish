@@ -35,6 +35,7 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
             }
             
             headerView.setTitle(headerText: Section(rawValue: indexPath.section)?.headerTitle)
+            headerView.findSectionNumber(by: indexPath.section)
             
             return headerView
         default:
