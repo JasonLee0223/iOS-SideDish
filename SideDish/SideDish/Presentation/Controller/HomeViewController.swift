@@ -16,8 +16,8 @@ class HomeViewController: UIViewController {
         
         configureOfUIComponents()
         configureOfSuperViewLayout()
-        homeCollectionViewDataSource.homeViewModel.fetchOfData()
-        reload()
+        let isCompleted = homeCollectionViewDataSource.homeViewModel.fetchOfData()
+        reload(by: isCompleted)
     }
     
     //MARK: - Private Property
@@ -29,17 +29,20 @@ class HomeViewController: UIViewController {
 //MARK: - [Public] View Reload Method
 extension HomeViewController {
     
-    private func reload() {
+    private func reload(by fetched: Bool) {
         
-        let observableData = homeCollectionViewDataSource.homeViewModel.sectionStorage[.main]
-        
-        observableData?.bind(listener: { _ in
-            Task {
-                self.collectionView.reloadData()
-                self.setHeaderViewDelegate()
-            }
-        })
+        if fetched {
+            let observableData = homeCollectionViewDataSource.homeViewModel.sectionStorage[.main]
+
+            observableData?.bind(listener: { _ in
+                Task {
+                    self.collectionView.reloadData()
+                    self.setHeaderViewDelegate()
+                }
+            })
+        }
     }
+    
 }
 
 //MARK: - Configure of UI Components

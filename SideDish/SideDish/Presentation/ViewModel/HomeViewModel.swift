@@ -45,13 +45,15 @@ extension HomeViewModel {
 //MARK: - Fetch
 extension HomeViewModel {
     
-    func fetchOfData() {
+    func fetchOfData() -> Bool {
         
         Section.allCases.forEach { section in
             Task(priority: .background) {
                 try await loadAllData(with: section)
             }
         }
+        
+        return true
     }
     
     private func loadAllData(with section: Section) async throws {
