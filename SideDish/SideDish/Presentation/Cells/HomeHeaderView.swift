@@ -6,6 +6,10 @@
 //
 
 import UIKit
+protocol HeaderDelegate: AnyObject {
+    
+    func didTapSectionHeader(section: HomeHeaderView, sectionNumber: Int)
+}
 
 final class HomeHeaderView: UICollectionReusableView, Reusable {
     
