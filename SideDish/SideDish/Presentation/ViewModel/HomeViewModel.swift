@@ -9,13 +9,8 @@ import Foundation
 
 final class HomeViewModel {
     
-    var sectionStorage: [Section: Observable<[Food]>]
-    
-    var itemsInSection = 0 {
-        didSet {
-            print("Section Item Update = \(itemsInSection)")
-        }
-    }
+    var itemsInSection = 0
+    var sectionStorage: [Section: Observable<[Food]>]    
     
     init() {
         networkService = NetworkService()

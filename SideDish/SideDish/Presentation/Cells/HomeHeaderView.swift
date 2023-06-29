@@ -15,6 +15,9 @@ protocol HeaderDelegate: AnyObject {
 
 final class HomeHeaderView: UICollectionReusableView, Reusable {
     
+    var itemsCount = 0
+    weak var headerDelegate: HeaderDelegate?
+    
     //MARK: - Initializer
     
     override init(frame: CGRect) {
@@ -30,14 +33,6 @@ final class HomeHeaderView: UICollectionReusableView, Reusable {
     }
     
     //MARK: - Private Property
-    
-    weak var headerDelegate: HeaderDelegate?
-    
-    var itemsCount = 0 {
-        didSet {
-            print("itemsCount = \(itemsCount)")
-        }
-    }
     
     private var sectionNumber: Int?
     private let titleFontSize: CGFloat = 32.0
