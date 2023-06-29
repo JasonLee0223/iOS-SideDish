@@ -36,6 +36,7 @@ extension HomeViewController {
         observableData?.bind(listener: { _ in
             Task {
                 self.collectionView.reloadData()
+                self.setHeaderViewDelegate()
             }
         })
     }
@@ -109,6 +110,30 @@ extension HomeViewController {
         layout.itemSize = itemSize
         return layout
     }
+}
+
+//MARK: - Configure of HeaderDelegate
+extension HomeViewController: HeaderDelegate {
+    
+    func didTapSectionHeader(section: HomeHeaderView, sectionNumber: Int) {
+        section.itemsCount = collectionView.numberOfItems(inSection: sectionNumber)
+    }
+    
+    private func setHeaderViewDelegate() {
+        Task { [weak self] in
+            guard let self = self else { return }
+            let countOfSection = collectionView.numberOfSections
+
+            for sectionIndex in 0..<countOfSection {
+                guard let sectionHeaderView = self.collectionView.supplementaryView(
+                    forElementKind: UICollectionView.elementKindSectionHeader,
+                    at: IndexPath(row: 0, section: sectionIndex)
+                ) as? HomeHeaderView else { return }
+                sectionHeaderView.headerDelegate = self
+            }
+        }
+    }
+    
 }
 
 //MARK: - Configure of CollectionViewDelegate
