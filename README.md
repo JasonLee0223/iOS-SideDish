@@ -6,7 +6,7 @@
 | ▫️ 언어 | Swift |
 | ▫️ 스킬 | Delegate 패턴, Observer 패턴 |
 | ▫️  라이브러리 | Toast |
-| ▫️ 디자인 패턴 | MVVM |
+| ▫️  디자인 패턴 | MVVM |
 
 &nbsp;
 
