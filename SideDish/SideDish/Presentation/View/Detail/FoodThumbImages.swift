@@ -11,14 +11,10 @@ class FoodThumbImages: UIScrollView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        configureOfLayout()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
-        configureOfLayout()
     }
     
     var imagePaths = [String]() {
@@ -94,6 +90,7 @@ extension FoodThumbImages {
                     
                     thumbImage.frame.origin.x = self.frame.width * CGFloat(index)
                     self.addSubview(thumbImage)
+                    self.configureOfLayout()
                 }
             }.resume()
         }
