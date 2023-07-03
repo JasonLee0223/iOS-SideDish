@@ -35,7 +35,7 @@ class ProductInformation: UIScrollView {
     }()
     
     private let foodThumbScroll = FoodThumbImages()
-    private let detailFoodInfo = DetailFoodInfo()
+    private let detailFoodInfo = DetailFoodInformation()
     private let deliveryInformation = DeliveryInformation()
     private let orderCount = OrderCount()
     private let orderAmount = OrderAmount()

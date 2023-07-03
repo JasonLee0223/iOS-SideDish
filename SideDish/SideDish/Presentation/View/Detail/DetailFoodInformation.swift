@@ -1,5 +1,5 @@
 //
-//  DetailFoodInfo.swift
+//  DetailFoodInformation.swift
 //  SideDish
 //
 //  Created by Jason on 2023/06/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailFoodInfo: UIStackView, TextStylable {
+class DetailFoodInformation: UIStackView, TextStylable {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,7 +67,7 @@ class DetailFoodInfo: UIStackView, TextStylable {
     }()
 }
 
-extension DetailFoodInfo {
+extension DetailFoodInformation {
     
     private func configureOfLayout() {
         
@@ -83,7 +83,7 @@ extension DetailFoodInfo {
 }
 
 //MARK: - [Public Method] Configure of UI Components
-extension DetailFoodInfo {
+extension DetailFoodInformation {
     
     func setFoodTitle(by name: String) {
         foodTitle.text = name
