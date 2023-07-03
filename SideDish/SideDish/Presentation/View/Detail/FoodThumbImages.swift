@@ -75,26 +75,27 @@ extension FoodThumbImages {
                 return
             }
             
-            guard let foodImageData = try? Data(contentsOf: imageURL) else {
-                print(ErrorOfHomeViewModel.EmptyOfImageData)
-                return
-            }
-            
-            guard let foodImage = UIImage(data: foodImageData) else {
-                print(ErrorOfHomeViewModel.EmptyOfImageData)
-                return
-            }
-            
-            let thumbImage = UIImageView()
-            thumbImage.image = foodImage
-            thumbImage.contentMode = .scaleToFill
-            thumbImage.frame = CGRect(
-                origin: self.frame.origin,
-                size: CGSize(width: self.frame.width, height: self.contentSize.height)
-            )
-            
-            thumbImage.frame.origin.x = self.frame.width * CGFloat(index)
-            self.addSubview(thumbImage)
+            URLSession.shared.dataTask(with: imageURL) { data, _, _ in
+                guard let imageData = data else { return }
+                
+                Task(priority: .userInitiated) {
+                    guard let foodImage = UIImage(data: imageData) else {
+                        print(ErrorOfHomeViewModel.EmptyOfImageData)
+                        return
+                    }
+                    
+                    let thumbImage = UIImageView()
+                    thumbImage.image = foodImage
+                    thumbImage.contentMode = .scaleToFill
+                    thumbImage.frame = CGRect(
+                        origin: self.frame.origin,
+                        size: CGSize(width: self.frame.width, height: self.contentSize.height)
+                    )
+                    
+                    thumbImage.frame.origin.x = self.frame.width * CGFloat(index)
+                    self.addSubview(thumbImage)
+                }
+            }.resume()
         }
    }
     

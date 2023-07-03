@@ -30,22 +30,24 @@ extension CookingImages {
                 return
             }
             
-            guard let imageData = try? Data(contentsOf: imageURL) else {
-                return
-            }
-            
-            guard let image = UIImage(data: imageData) else {
-                 return
-            }
-            
-            let cookingImage = UIImageView()
-            cookingImage.image = image
-            cookingImage.contentMode = .scaleAspectFit
-            cookingImage.frame = CGRect(
-                origin: self.frame.origin, size: self.frame.size
-            )
-            
-            self.addArrangedSubview(cookingImage)
+            URLSession.shared.dataTask(with: imageURL) { data, _, _ in
+                guard let imageData = data else { return }
+                
+                guard let image = UIImage(data: imageData) else {
+                     return
+                }
+                
+                Task(priority: .userInitiated) {
+                    let cookingImage = UIImageView()
+                    cookingImage.image = image
+                    cookingImage.contentMode = .scaleAspectFit
+                    cookingImage.frame = CGRect(
+                        origin: self.frame.origin, size: self.frame.size
+                    )
+                    
+                    self.addArrangedSubview(cookingImage)
+                }
+            }.resume()
         }
     }
     
