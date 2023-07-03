@@ -54,7 +54,7 @@
 <img src = "https://user-images.githubusercontent.com/92699723/250234554-8b38dd95-355e-47c1-a34f-928bbc73ee19.jpg" width = 70%>
 
 ### 🖥️ 상세 화면
-<img src = "" width = 70%>
+<img src = "https://user-images.githubusercontent.com/92699723/250474246-c67696e3-7423-4f1c-b9f3-6e04175308bb.jpg" width = 70%>
 
 ## ⒊ 트러블 슈팅
 
