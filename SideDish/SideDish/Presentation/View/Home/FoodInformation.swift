@@ -10,6 +10,35 @@ import UIKit
 protocol TextStylable {
     
     func convertTextStyleToStrikethrough(from label: UILabel)
+    
+    func createBadgeLabel(by values: [String], stackView: UIStackView)
+}
+
+extension TextStylable {
+    
+    func createBadgeLabel(by values: [String], stackView: UIStackView) {
+        values.forEach { priceType in
+            switch BargainPriceTypeList(rawValue: priceType) {
+            case .best:
+                let badge = UILabel.makeBadge(
+                    title: priceType, backgroundColor: UIColor.launchingBadgeBackground
+                )
+                stackView.addArrangedSubview(badge)
+            case .new:
+                let badge = UILabel.makeBadge(
+                    title: priceType, backgroundColor: UIColor.eventBadgeBackground
+                )
+                stackView.addArrangedSubview(badge)
+            case .season:
+                let badge = UILabel.makeBadge(
+                    title: priceType, backgroundColor: UIColor.defaultBadgeBackground
+                )
+                stackView.addArrangedSubview(badge)
+            case .none:
+                return
+            }
+        }
+    }
 }
 
 extension TextStylable {
@@ -157,27 +186,7 @@ extension FoodInformation {
     func setBadge(by bargainPriceTypes: [String]?) {
         guard let bargainPriceTypes = bargainPriceTypes else { return }
         
-        bargainPriceTypes.forEach { priceType in
-            switch BargainPriceTypeList(rawValue: priceType) {
-            case .best:
-                let badge = UILabel.makeBadge(
-                    title: priceType, backgroundColor: UIColor.launchingBadgeBackground
-                )
-                badgeStackView.addArrangedSubview(badge)
-            case .new:
-                let badge = UILabel.makeBadge(
-                    title: priceType, backgroundColor: UIColor.eventBadgeBackground
-                )
-                badgeStackView.addArrangedSubview(badge)
-            case .season:
-                let badge = UILabel.makeBadge(
-                    title: priceType, backgroundColor: UIColor.defaultBadgeBackground
-                )
-                badgeStackView.addArrangedSubview(badge)
-            case .none:
-                return
-            }
-        }
+        createBadgeLabel(by: bargainPriceTypes, stackView: badgeStackView)
     }
     
     private func setPrimeCost(by text: String) {

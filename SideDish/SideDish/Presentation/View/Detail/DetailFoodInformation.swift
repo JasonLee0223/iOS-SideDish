@@ -102,28 +102,7 @@ extension DetailFoodInformation {
     }
     
     func setMockBadge(by textGroup: [String]) {
-        textGroup.forEach { text in
-            switch BargainPriceTypeList(rawValue: text) {
-            case .best:
-                let badge = UILabel.makeBadge(
-                    title: text, backgroundColor: UIColor.launchingBadgeBackground
-                )
-                badgeStackView.addArrangedSubview(badge)
-            case .new:
-                let badge = UILabel.makeBadge(
-                    title: text, backgroundColor: UIColor.eventBadgeBackground
-                )
-                badgeStackView.addArrangedSubview(badge)
-            case .season:
-                let badge = UILabel.makeBadge(
-                    title: text, backgroundColor: UIColor.defaultBadgeBackground
-                )
-                badgeStackView.addArrangedSubview(badge)
-            case .none:
-                return
-            }
-        }
-        
+        createBadgeLabel(by: textGroup, stackView: badgeStackView)
     }
     
     //TODO: - Badge UI 추가
