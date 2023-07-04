@@ -7,8 +7,25 @@
 
 import UIKit
 
-class OrderAmount: UIStackView {
+class OrderAmount: UIStackView, OrderProtocol {
+    
+    //MARK: - Public Property
+    
+    var orderCount: Int = 0 {
+        didSet {
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            
+            let orderPrice = orderCount * convertToText(by: foodPrice)
+            var result = numberFormatter.string(from: orderPrice as NSNumber)
+            
+            result?.append(contentsOf: "원")
+            totalOrderAmount.text = result
+        }
+    }
 
+    //MARK: - Initializer
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureOfOrderAmount()
@@ -20,6 +37,10 @@ class OrderAmount: UIStackView {
         configureOfOrderAmount()
         configureOfLayout()
     }
+    
+    //MARK: - Private Property
+    
+    private var foodPrice = ""
     
     private var amountGroup: UIStackView = {
         let amountGroup = UIStackView()
@@ -63,6 +84,26 @@ extension OrderAmount {
     
     func setOrderAmount(by value: String) {
         totalOrderAmount.text = value
+        foodPrice = value
+    }
+    
+    private func convertToText(by value: String) -> Int {
+        
+        var splitedPriceValue = value.components(separatedBy: ",")
+        
+        guard var lastValue = splitedPriceValue.last else {
+            return 0
+        }
+        
+        lastValue.removeLast()
+        splitedPriceValue.removeLast()
+        splitedPriceValue.append(lastValue)
+        
+        guard let price = Int(splitedPriceValue.joined()) else {
+            return 0
+        }
+        
+        return price
     }
     
     private func configureOfOrderAmount() {
