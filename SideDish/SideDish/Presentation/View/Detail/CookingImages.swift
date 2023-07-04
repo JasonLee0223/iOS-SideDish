@@ -40,9 +40,10 @@ extension CookingImages {
                 Task(priority: .userInitiated) {
                     let cookingImage = UIImageView()
                     cookingImage.image = image
-                    cookingImage.contentMode = .scaleAspectFit
+                    cookingImage.contentMode = .scaleToFill
                     cookingImage.frame = CGRect(
-                        origin: self.frame.origin, size: self.frame.size
+                        origin: self.frame.origin,
+                        size: CGSize(width: self.frame.width, height: self.frame.height / 3)
                     )
                     
                     self.addArrangedSubview(cookingImage)
