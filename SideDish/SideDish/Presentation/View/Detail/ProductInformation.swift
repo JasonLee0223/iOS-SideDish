@@ -17,6 +17,7 @@ class ProductInformation: UIScrollView {
         configureOfScroll()
         addSubViewInProductInformation()
         configureOfLayout()
+        setDelegate()
     }
     
     required init?(coder: NSCoder) {
@@ -25,6 +26,7 @@ class ProductInformation: UIScrollView {
         configureOfScroll()
         addSubViewInProductInformation()
         configureOfLayout()
+        setDelegate()
     }
     
     /// Custom SubClass View
@@ -95,6 +97,12 @@ class ProductInformation: UIScrollView {
     private func configureOfScroll() {
         self.isScrollEnabled = true
         self.showsVerticalScrollIndicator = false
+    }
+    
+    private func setDelegate() {
+        Task {
+            self.orderCount.countDelegate = orderAmount
+        }
     }
 }
 
