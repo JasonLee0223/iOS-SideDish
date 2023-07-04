@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol OrderProtocol: AnyObject {
+    
+    var orderCount: Int { get set }
+}
+
 class OrderCount: UIStackView {
+    
+    weak var countDelegate: OrderProtocol?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,6 +65,7 @@ class OrderCount: UIStackView {
     @objc private func calculateQuantity(_ sender: UIStepper) {
         let newOrder = Int(sender.value)
         quantity.text = newOrder.description
+        countDelegate?.orderCount = newOrder
     }
 }
 
