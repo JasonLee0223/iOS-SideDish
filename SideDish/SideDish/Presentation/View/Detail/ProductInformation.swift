@@ -78,7 +78,7 @@ class ProductInformation: UIScrollView {
     }
     
     func setFood(by badge: [String]) {
-        detailFoodInfo.setMockBadge(by: badge[0])
+        detailFoodInfo.setMockBadge(by: badge)
     }
     
     func setDeliveryInfo(by data: [String]) {

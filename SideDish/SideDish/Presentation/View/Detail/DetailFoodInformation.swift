@@ -59,11 +59,12 @@ class DetailFoodInformation: UIStackView, TextStylable {
         return salePrice
     }()
     
-    private let mockBadge: UILabel = {
-        let mockBadge = UILabel()
-        mockBadge.font = .systemFont(ofSize: 16)
-        mockBadge.textColor = .black
-        return mockBadge
+    private var badgeStackView: UIStackView = {
+        let badgeStackView = UIStackView()
+        badgeStackView.axis = .horizontal
+        badgeStackView.spacing = 4
+        badgeStackView.distribution = .fillProportionally
+        return badgeStackView
     }()
 }
 
@@ -76,9 +77,7 @@ extension DetailFoodInformation {
         self.addArrangedSubview(costGroup)
         costGroup.addArrangedSubview(primePrice)
         costGroup.addArrangedSubview(salePrice)
-        
-        //TODO: - Badge 추가
-        self.addArrangedSubview(mockBadge)
+        self.addArrangedSubview(badgeStackView)
     }
 }
 
@@ -102,8 +101,29 @@ extension DetailFoodInformation {
         convertTextStyleToStrikethrough(from: salePrice)
     }
     
-    func setMockBadge(by text: String) {
-        mockBadge.text = text
+    func setMockBadge(by textGroup: [String]) {
+        textGroup.forEach { text in
+            switch BargainPriceTypeList(rawValue: text) {
+            case .best:
+                let badge = UILabel.makeBadge(
+                    title: text, backgroundColor: UIColor.launchingBadgeBackground
+                )
+                badgeStackView.addArrangedSubview(badge)
+            case .new:
+                let badge = UILabel.makeBadge(
+                    title: text, backgroundColor: UIColor.eventBadgeBackground
+                )
+                badgeStackView.addArrangedSubview(badge)
+            case .season:
+                let badge = UILabel.makeBadge(
+                    title: text, backgroundColor: UIColor.defaultBadgeBackground
+                )
+                badgeStackView.addArrangedSubview(badge)
+            case .none:
+                return
+            }
+        }
+        
     }
     
     //TODO: - Badge UI 추가
