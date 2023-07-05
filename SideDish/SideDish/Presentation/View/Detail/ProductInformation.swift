@@ -72,9 +72,12 @@ class ProductInformation: UIScrollView {
         detailFoodInfo.setFoodDescription(by: description)
     }
     
-    func setFood(price: String, salePrice: String) {
+    func setFood(price: String, salePrice: String? = nil) {
         detailFoodInfo.setPrimePrice(by: price)
-        detailFoodInfo.setSalePrice(by: salePrice)
+        
+        if let salePrice = salePrice {
+            detailFoodInfo.setSalePrice(by: salePrice)
+        }
     }
     
     func setFood(by badge: [String]) {

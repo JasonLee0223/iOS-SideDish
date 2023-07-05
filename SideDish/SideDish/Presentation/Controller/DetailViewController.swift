@@ -14,6 +14,7 @@ final class DetailViewController: UIViewController {
     var foodTitle: String?
     
     override func viewWillAppear(_ animated: Bool) {
+        
         if animated {
             guard let unwrappingFoodCode = detailFoodCode else {
                 return
@@ -39,7 +40,12 @@ final class DetailViewController: UIViewController {
                 
                 if let price = networkResult.prices.first,
                    let salePrice = networkResult.prices.last {
-                    productInformation.setFood(price: price, salePrice: salePrice)
+                    
+                    if price == salePrice {
+                        productInformation.setFood(price: salePrice)
+                    } else {
+                        productInformation.setFood(price: price, salePrice: salePrice)
+                    }
                 }
                 
                 if let salePrice = networkResult.prices.last {
