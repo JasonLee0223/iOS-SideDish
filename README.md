@@ -57,6 +57,19 @@
 ### 🖥️ 상세 화면
 <img src = "https://user-images.githubusercontent.com/92699723/250474246-c67696e3-7423-4f1c-b9f3-6e04175308bb.jpg" width = 70%>
 
+### 2-2. 레이어(Layer) 구현
+| 레이어 | 서브레이어 | 설명 |
+|:---|:---|:---|
+| Presentation | Controller | Home, Detail의 ViewController를 관리한다.|
+||CellLayout|홈 화면의 collectionView Cell 레이아웃으로 Compositional을 사용하여 관리한다.|
+||DataSource|홈 화면의 collectionView DataSource를 커스텀 타입으로 만들어 관리한다.|
+||Cells|CollectionView의 Cell을 구성하는 UI 요소들을 관리한다.|
+||ViewModel|API 데이터를 관리하며 UI에 바인딩하는 역할을 한다.|
+||View|Cell에 들어가는 UI 요소들을 관리한다.|
+|Domain|Entity|홈 화면에 사용되는 api 데이터들을 Food 타입으로 관리한다. <br/>(DetailVC에서 사용되는 Entity는 불필요하다고 생각되어 구현하지 않음)|
+|Data|Network <br/>(APIEndpoint)|API 요청 및 응답의 콘크리트 형태|
+|Infrastructure|Network <br/>(Endpoint & Service)|Endpoint의 인터페이스 및 실제 서버로부터 응답받은 데이터를 가지고있다.|
+
 ## ⒊ 트러블 슈팅
 
 ## ⒋ 학습 키워드 및 내용
