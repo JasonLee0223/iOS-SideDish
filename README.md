@@ -1,6 +1,8 @@
 # 🍱 SideDish (반찬 서비스)
 > 코드스쿼드에서 제공해주는 API를 이용하여 반찬 서비스 앱 구현하기
 
+&nbsp;
+
 |주제|항목|
 |:---|:---|
 | ▫️ 언어 | Swift |
@@ -8,17 +10,26 @@
 | ▫️  라이브러리 | Toast |
 | ▫️  디자인 패턴 | MVVM |
 
-&nbsp;
+## 🪧 목차
 
-## 🪧 목차 
-[⒈ 기능](#⒈-기능)
-
-[⒉ 설계 및 구현](#⒉-설계-및-구현)
-
-[⒊ 트러블 슈팅](#⒊-트러블-슈팅)
-
-[⒋ 학습 키워드 및 내용](#⒋-학습-키워드-및-내용)
-
+- [🍱 SideDish (반찬 서비스)](#-sidedish-반찬-서비스)
+  - [🪧 목차](#-목차)
+  - [📱 실행 결과](#-실행-결과)
+  - [⒈ 기능](#-기능)
+    - [🖥️ 홈 화면](#️-홈-화면)
+    - [🖥️ 상세 화면](#️-상세-화면)
+  - [⒉ 설계 및 구현](#-설계-및-구현)
+    - [2-1. 화면 설계 방법](#2-1-화면-설계-방법)
+    - [🖥️ 홈 화면](#️-홈-화면-1)
+    - [🖥️ 상세 화면](#️-상세-화면-1)
+    - [2-2. 레이어(Layer) 구현](#2-2-레이어layer-구현)
+  - [⒊ 트러블 슈팅](#-트러블-슈팅)
+    - [🔴 3-1. UICollectionViewDataSource의 비동기 reload 에러 해결](#-3-1-uicollectionviewdatasource의-비동기-reload-에러-해결)
+    - [🔴 (작성 예정) 3-2. reloadData -\> reloadSection 리펙토링](#-작성-예정-3-2-reloaddata---reloadsection-리펙토링)
+    - [🟡 (작성 예정) 3-3. UIScrollView의 View 계층 관계](#-작성-예정-3-3-uiscrollview의-view-계층-관계)
+    - [🟢 (작성 예정) 3-4. prepareForReuse를 사용한 셀 초기화 작업](#-작성-예정-3-4-prepareforreuse를-사용한-셀-초기화-작업)
+    - [🔴 (작성 예정) 3-5. UICollectionViewDataSource의 추상화 리펙토링](#-작성-예정-3-5-uicollectionviewdatasource의-추상화-리펙토링)
+    - [🔴 (작성 예정) 3-6. OAuth를 사용한 소셜 로그인 구현하기](#-작성-예정-3-6-oauth를-사용한-소셜-로그인-구현하기)
 ---
 ## 📱 실행 결과
 
@@ -28,7 +39,8 @@
   <img src= "https://user-images.githubusercontent.com/92699723/249687442-9fbacd95-93f1-44e2-8388-85cca8f96b51.png" width= 30% />
 </p>
 
- &nbsp;
+&nbsp;
+
 ---
 
 ## ⒈ 기능
@@ -72,4 +84,23 @@
 
 ## ⒊ 트러블 슈팅
 
-## ⒋ 학습 키워드 및 내용
+해결해나아가는 과정에 대한 난이도를 아래와 같이 표현합니다.
+
+|난이도|이모지|
+|:---:|:---|
+|상|🔴|
+|중|🟡|
+|하|🟢|
+
+### 🔴 3-1. UICollectionViewDataSource의 비동기 reload 에러 해결
+[Velog - UICollectionViewDataSource의 비동기 reload 에러 해결에 대하여...](https://velog.io/@jaonlee0223/UICollectionViewDataSource%EC%9D%98-%EB%B9%84%EB%8F%99%EA%B8%B0-reload-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC)
+
+### 🔴 (작성 예정) 3-2. reloadData -> reloadSection 리펙토링
+
+### 🟡 (작성 예정) 3-3. UIScrollView의 View 계층 관계
+
+### 🟢 (작성 예정) 3-4. prepareForReuse를 사용한 셀 초기화 작업
+
+### 🔴 (작성 예정) 3-5. UICollectionViewDataSource의 추상화 리펙토링
+
+### 🔴 (작성 예정) 3-6. OAuth를 사용한 소셜 로그인 구현하기
