@@ -1,8 +1,6 @@
 # 🍱 SideDish (반찬 서비스)
 > 코드스쿼드에서 제공해주는 API를 이용하여 반찬 서비스 앱 구현하기
 
-&nbsp;
-
 |주제|항목|
 |:---|:---|
 | ▫️ 언어 | Swift |
@@ -38,8 +36,6 @@
   <img src= "https://user-images.githubusercontent.com/92699723/249687430-3076fa35-ee48-4b37-8687-9e635aafe336.png" width= 30% /> 
   <img src= "https://user-images.githubusercontent.com/92699723/249687442-9fbacd95-93f1-44e2-8388-85cca8f96b51.png" width= 30% />
 </p>
-
-&nbsp;
 
 ---
 
