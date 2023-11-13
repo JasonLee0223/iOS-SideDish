@@ -27,7 +27,7 @@
     - [🟡 (작성 예정) 3-3. UIScrollView의 View 계층 관계](#-작성-예정-3-3-uiscrollview의-view-계층-관계)
     - [🟢 3-4. prepareForReuse를 사용한 셀 초기화 작업](#-3-4-prepareforreuse를-사용한-셀-초기화-작업)
     - [🔴 (작성 예정) 3-5. UICollectionViewDataSource의 추상화 리펙토링](#-작성-예정-3-5-uicollectionviewdatasource의-추상화-리펙토링)
-    - [🔴 (작성 예정) 3-6. OAuth를 사용한 소셜 로그인 구현하기](#-작성-예정-3-6-oauth를-사용한-소셜-로그인-구현하기)
+    - [🔴 3-6. OAuth를 사용한 소셜 로그인 구현하기](#-3-6-oauth를-사용한-소셜-로그인-구현하기)
 ---
 ## 📱 실행 결과
 
@@ -100,4 +100,5 @@
 
 ### 🔴 (작성 예정) 3-5. UICollectionViewDataSource의 추상화 리펙토링
 
-### 🔴 (작성 예정) 3-6. OAuth를 사용한 소셜 로그인 구현하기
+### 🔴 3-6. OAuth를 사용한 소셜 로그인 구현하기
+[iOS 앱에서 Github 소셜 로그인 구현 방법 (with OAuth 2.0)](https://velog.io/@jaonlee0223/iOS-%EC%95%B1%EC%97%90%EC%84%9C-Github-%EC%86%8C%EC%85%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84-%EB%B0%A9%EB%B2%95-with-OAuth-2.0)
