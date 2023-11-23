@@ -9,21 +9,22 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let homeCollectionViewDataSource = HomeCollectionViewDataSource()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let isCompleted = homeCollectionViewDataSource.homeViewModel.fetchOfData()
+        reload(by: isCompleted)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureOfUIComponents()
         configureOfSuperViewLayout()
-        let isCompleted = homeCollectionViewDataSource.homeViewModel.fetchOfData()
-        reload(by: isCompleted)
     }
     
     //MARK: - Private Property
-    private let collectionView: UICollectionView = UICollectionView(
-        frame: .zero, collectionViewLayout: UICollectionViewLayout()
-    )
+    private let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    private let homeCollectionViewDataSource = HomeCollectionViewDataSource()
 }
 
 //MARK: - [Public] View Reload Method
@@ -49,36 +50,24 @@ extension HomeViewController {
 extension HomeViewController {
     
     private func configureOfUIComponents() {
-        configureOfSuperView()
-        configureOfNavigationBar()
+        self.view.backgroundColor = .systemBackground
+        self.navigationItem.title = "Ordering"
         configureOfCollectionView()
         updateDataSource()
     }
     
-    private func configureOfSuperView() {
-        view.backgroundColor = .systemBackground
-    }
-    
-    private func configureOfNavigationBar() {
-        navigationItem.title = "Ordering"
-    }
-    
     private func configureOfCollectionView() {
-        
         collectionView.isScrollEnabled = true
         collectionView.showsVerticalScrollIndicator = true
         collectionView.clipsToBounds = true
         collectionView.collectionViewLayout = configreOfCollectionViewFlowLayout()
         
-        collectionView.register(
-            HomeHeaderView.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: HomeHeaderView.identifier
-        )
+        collectionView.register(HomeHeaderView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: HomeHeaderView.identifier)
         
-        collectionView.register(
-            HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.identifier
-        )
+        collectionView.register(HomeViewCell.self, 
+                                forCellWithReuseIdentifier: HomeViewCell.identifier)
     }
     
     private func updateDataSource() {
@@ -136,7 +125,6 @@ extension HomeViewController: HeaderDelegate {
             }
         }
     }
-    
 }
 
 //MARK: - Configure of CollectionViewDelegate

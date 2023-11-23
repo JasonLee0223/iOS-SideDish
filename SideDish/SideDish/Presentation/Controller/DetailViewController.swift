@@ -52,13 +52,11 @@ final class DetailViewController: UIViewController {
                     productInformation.setOrder(by: salePrice)
                 }
                 
-                productInformation.setDeliveryInfo(
-                    by: [networkResult.point, networkResult.deliveryInfo, networkResult.deliveryFee]
-                )
-                
+                productInformation.setDeliveryInfo(by: [networkResult.point,
+                                                        networkResult.deliveryInfo,
+                                                        networkResult.deliveryFee])
                 productInformation.setCookingImage(by: networkResult.detailSection)
             }
-            
         }
     }
 
@@ -70,7 +68,6 @@ final class DetailViewController: UIViewController {
     }
     
     private let networkService = NetworkService()
-
     private let productInformation = ProductInformation(frame: .zero)
 }
 

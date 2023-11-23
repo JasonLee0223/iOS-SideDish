@@ -63,5 +63,5 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         return cell
     }
     
-    let homeViewModel: HomeViewModel
+    private let homeViewModel: HomeViewModel
 }

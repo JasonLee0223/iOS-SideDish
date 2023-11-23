@@ -17,7 +17,7 @@ final class HomeViewCell: UICollectionViewCell, Reusable {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+        configuration()
     }
     
     //MARK: - Private Property
