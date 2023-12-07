@@ -23,9 +23,8 @@
     - [2-2. 레이어(Layer) 구현](#2-2-레이어layer-구현)
   - [⒊ 트러블 슈팅](#-트러블-슈팅)
     - [🔴 3-1. UICollectionViewDataSource의 비동기 reload 에러 해결](#-3-1-uicollectionviewdatasource의-비동기-reload-에러-해결)
-    - [🔴 (작성 예정) 3-2. reloadData -\> reloadSection 리펙토링](#-작성-예정-3-2-reloaddata---reloadsection-리펙토링)
     - [🟢 3-3. prepareForReuse를 사용한 셀 초기화 작업](#-3-3-prepareforreuse를-사용한-셀-초기화-작업)
-    - [🔴 3-4. OAuth를 사용한 소셜 로그인 구현하기](#-3-4-oauth를-사용한-소셜-로그인-구현하기)
+    - [🟡 3-4. OAuth를 사용한 소셜 로그인 구현하기](#-3-4-oauth를-사용한-소셜-로그인-구현하기)
 ---
 ## 📱 실행 결과
 
@@ -89,10 +88,8 @@
 ### 🔴 3-1. UICollectionViewDataSource의 비동기 reload 에러 해결
 [✏️ Velog - UICollectionViewDataSource의 비동기 reload 에러 해결에 대하여...](https://velog.io/@jaonlee0223/UICollectionViewDataSource%EC%9D%98-%EB%B9%84%EB%8F%99%EA%B8%B0-reload-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC)
 
-### 🔴 (작성 예정) 3-2. reloadData -> reloadSection 리펙토링
-
 ### 🟢 3-3. prepareForReuse를 사용한 셀 초기화 작업
 [✏️ Velog - Cell의 재사용성에 대해 (with prepareForReuse())](https://velog.io/@jaonlee0223/Cell%EC%9D%98-%EC%9E%AC%EC%82%AC%EC%9A%A9%EC%84%B1%EC%97%90-%EB%8C%80%ED%95%B4-with-prepareForReuse)
 
-### 🔴 3-4. OAuth를 사용한 소셜 로그인 구현하기
+### 🟡 3-4. OAuth를 사용한 소셜 로그인 구현하기
 [✏️ Velog - iOS 앱에서 Github 소셜 로그인 구현 방법 (with OAuth 2.0)](https://velog.io/@jaonlee0223/iOS-%EC%95%B1%EC%97%90%EC%84%9C-Github-%EC%86%8C%EC%85%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84-%EB%B0%A9%EB%B2%95-with-OAuth-2.0)
